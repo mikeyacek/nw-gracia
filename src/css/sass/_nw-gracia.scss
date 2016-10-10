@@ -1,0 +1,53 @@
+@import "jeet/index";
+body {
+    @include center(960px);
+}
+
+
+.dlazdice {
+    clear: both;
+    @include col(1/4);
+    position: relative;
+    background-image: url("img/SGKadernictvi.jpg");
+    background-color: transparent;
+    background-position: cover;
+    background-position-x: center;
+    background-position-y: center;
+    background-size: cover;
+    height: 200px;
+    background-repeat: no-repeat;
+    @media screen and (max-width: 680px) {
+            @include column(1/1);
+    }
+}
+
+.dlazdice-text {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 3px;
+    h3 {
+        margin: 0px;
+        padding: 0px;
+        color: black;
+    }
+    @media screen and (max-width: 680px) {
+            @include column(1/1);
+    }
+}
+
+// Logo
+.logo {
+   @include col(1/4, $offset: 3/4);
+   display: block;
+   @media screen and (max-width: 680px) {
+            @include column(1/1);
+    }
+}
+
+.logo-img {
+    
+    margin: 2em;
+}

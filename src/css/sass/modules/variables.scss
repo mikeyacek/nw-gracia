@@ -1,0 +1,51 @@
+/**
+ * modules/variables
+ * ---
+ */
+
+
+/**
+ * Typography
+ */
+@import 'https://fonts.googleapis.com/css?family=Cormorant+Garamond|Raleway';
+
+$font-family-base: 'Raleway', sans-serif;
+$font-family-header: 'Cormorant Garamond', serif;
+$font-size-base: 140%;
+$line-height-base: 1.5;
+$nazev_webu_size: 4em;
+$podnazev_webu_size: 2em;
+
+
+/**
+ * Colors
+ */
+
+$text-color: white;
+$body-bg: #420001;
+$selection-bg: #04A4CC;
+$tmavsi-pozadi: #240000;
+$border-color: white;
+$box-color: gainsboro;
+$box-logo-color: silver;
+$box-text-color: black;
+$telefon-color: orangered;
+
+
+/**
+ * Grid
+ */
+
+$wrapper-width: 1280px;
+$padding-horizontal-base: 5px;
+$padding-vertical-base: 5px;
+$margin-horizontal-base: 5px;
+$margin-vertical-base: 5px;
+$margin-horizontal-large: 15px;
+$margin-vertical-large: 15px;
+
+$box-padding: 1em;
+$box-margin: 2em;
+$border-radius: 5px; 
+$nazev_webu_padding: 3em;
+$search-top-padding: 8em;
