@@ -1,11 +1,11 @@
 /*!
- * Theme Name: HTML5 Blank
- * Theme URI: http://html5blank.com
- * Description: HTML5 Blank WordPress Theme
- * Version: 1.5.0
- * Author: Todd Motto (@toddmotto)
- * Author URI: http://toddmotto.com
- * Tags: Blank, HTML5, CSS3
+ * Theme Name: Salon Grácia
+ * Theme URI: http://novotnyweb.cz
+ * Description: Salon Grácia, šablona WP
+ * Version: 0.0.1
+ * Author: Marek Novotný
+ * Author URI: http://novotnyweb.cz
+ * Tags: grácia
  *
  * License: MIT
  * License URI: http://opensource.org/licenses/mit-license.php
@@ -463,7 +463,9 @@ main {
       width: 100%;
       margin-left: 0%;
       margin-right: 3%;
-      float: left; }
+      float: none;
+      padding: 0.5em;
+      padding-right: 0.5em; }
       main:before, main:after {
         content: '';
         display: table; }
@@ -481,6 +483,9 @@ main {
     font-size: 2em;
     text-transform: uppercase;
     color: white; }
+  @media screen and (max-width: 680px) {
+    .platno {
+      padding: 0.5em; } }
 
 footer {
   clear: both; }
@@ -777,6 +782,23 @@ footer {
 .dlazdice-blok {
   clear: both;
   display: block; }
+  @media screen and (max-width: 680px) {
+    .dlazdice-blok {
+      *zoom: 1;
+      float: left;
+      clear: none;
+      text-align: inherit;
+      width: 100%;
+      margin-left: 0%;
+      margin-right: 3%;
+      margin: 0.5em; }
+      .dlazdice-blok:before, .dlazdice-blok:after {
+        content: '';
+        display: table; }
+      .dlazdice-blok:after {
+        clear: both; }
+      .dlazdice-blok:last-child {
+        margin-right: 0%; } }
 
 .dlazdice {
   clear: both;
@@ -812,7 +834,7 @@ footer {
       width: 100%;
       margin-left: 0%;
       margin-right: 0%;
-      width: 90%;
+      width: 100%;
       margin: 0px; }
       .dlazdice:before, .dlazdice:after {
         content: '';

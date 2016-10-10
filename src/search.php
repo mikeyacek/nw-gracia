@@ -2,7 +2,7 @@
 
 	<main role="main">
 		<!-- section -->
-		<section>
+		<section class="platno">
 
 			<h1><?php echo sprintf( __( '%s Výsledky hledání ', 'html5blank' ), $wp_query->found_posts ); echo get_search_query(); ?></h1>
 
