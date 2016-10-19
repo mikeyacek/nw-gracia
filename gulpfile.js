@@ -147,7 +147,7 @@ gulp.task( "watch", [ "template", "styles" ], function() {
 	], [ "styles" ] );
 
 	/** Watch for JSHint */
-	gulp.watch( "src/js/{!(lib)/*.js,*.js}", ["jshint"] );
+	
 });
 
 /** Build */
@@ -156,7 +156,7 @@ gulp.task( "build", [
 	"clean",
 	"template",
 	"styles",
-	"jshint",
+	
 	"copy",
 	"uglify"
 ], function () {
