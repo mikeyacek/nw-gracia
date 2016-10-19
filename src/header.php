@@ -29,6 +29,8 @@
         });
         </script>
 
+		
+
 </head>
 
 <body <?php body_class(); ?>>
@@ -73,8 +75,9 @@
 		$image06 = get_field( 'dlazdice_img_6', 'option' );
 	
 ?>
-				<div class="dlazdice-blok">
-					<a href="<?php echo get_site_url(); ?>/?page_id=52" class="dlazdice" style="background-image:url('<?php echo $image01['url']; ?>');">
+				<div class="dlazdice-blok"> <!--ROZDELENI BLOKU-->
+
+					<a href="<?php echo get_site_url(); ?>/?page_id=88" class="dlazdice" style="background-image:url('<?php echo $image01['url']; ?>');">
 
 						<div class="dlazdice-text">
 							<h3>

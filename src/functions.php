@@ -106,6 +106,7 @@ function html5blank_header_scripts()
             wp_register_script(
                 'html5blankscripts',
                 get_template_directory_uri() . '/js/scripts.js',
+                
                 array(
                     'conditionizr',
                     'modernizr',
@@ -130,8 +131,8 @@ function html5blank_conditional_scripts()
 {
     if (is_page('pagenamehere')) {
         // Conditional script(s)
-        wp_register_script('scriptname', get_template_directory_uri() . '/js/scriptname.js', array('jquery'), '1.0.0');
-        wp_enqueue_script('scriptname');
+        wp_register_script('headroom', get_template_directory_uri() . '/js/headroom.min.js', array('jquery'), '1.0.0');
+        wp_enqueue_script('headroom');
     }
 }
 
