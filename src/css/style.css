@@ -480,7 +480,9 @@ main {
     .platno a:active, .platno a:focus {
       color: #240000; }
   .platno .sloupecky {
-    overflow: hidden; }
+    clear: both;
+    overflow: hidden;
+    margin-bottom: 1em; }
   .platno .vyhody {
     *zoom: 1;
     float: left;
@@ -497,7 +499,8 @@ main {
     background-color: #240000;
     color: white;
     height: 100%;
-    box-shadow: 2px 2px 8px darkgray; }
+    box-shadow: 2px 2px 8px darkgray;
+    border-radius: 5px; }
     .platno .vyhody:before, .platno .vyhody:after {
       content: '';
       display: table; }
@@ -528,7 +531,8 @@ main {
     background-color: #420001;
     color: white;
     height: 100%;
-    box-shadow: 2px 2px 8px darkgray; }
+    box-shadow: 2px 2px 8px darkgray;
+    border-radius: 5px; }
     .platno .nutno_dodrzet:before, .platno .nutno_dodrzet:after {
       content: '';
       display: table; }
@@ -558,7 +562,8 @@ main {
     margin-top: 2em;
     margin-bottom: 2em;
     background-color: lightsalmon;
-    box-shadow: 2px 2px 8px darkgray; }
+    box-shadow: 2px 2px 8px darkgray;
+    border-radius: 5px; }
     .platno .upozorneni:before, .platno .upozorneni:after {
       content: '';
       display: table; }
@@ -579,6 +584,7 @@ main {
       border-width: 2px;
       border-style: none;
       margin-right: 2em;
+      drop-shadow: 2px 2px 8px darkgray;
       float: left; }
       .platno .upozorneni img:before, .platno .upozorneni img:after {
         content: '';
@@ -687,7 +693,9 @@ footer {
 
 @media screen and (max-width: 680px) {
   .text_kadernictvi_blok {
-    text-align: left; } }
+    text-align: left;
+    margin-bottom: -9997em;
+    padding-bottom: 9999em; } }
 
 .osobni_foto_leve {
   position: relative;
@@ -695,9 +703,9 @@ footer {
   clear: both;
   display: block;
   background: gainsboro;
-  margin-bottom: 2em;
-  min-height: 100px;
   overflow: hidden;
+  margin-bottom: 1em;
+  /*overflow: hidden;*/
   border-style: solid;
   border-width: 0px;
   border-color: darkgray;
@@ -791,8 +799,8 @@ footer {
   background-repeat: no-repeat;
   background-position: -10% -10%;
   margin-bottom: 2em;
-  min-height: 100px;
   overflow: hidden;
+  margin-bottom: 1em;
   border-style: solid;
   border-width: 0px;
   border-color: darkgray;
@@ -875,6 +883,167 @@ footer {
         .osobni_foto_prave p:last-child {
           margin-right: 0%; } }
 
+/*--------------- KOSMETIKA --------------------------*/
+.kosm_foto_leve {
+  position: relative;
+  padding: 1em;
+  clear: both;
+  display: block;
+  background: gainsboro;
+  overflow: hidden;
+  margin-bottom: 1em;
+  /*overflow: hidden;*/
+  border-style: solid;
+  border-width: 0px;
+  border-color: darkgray;
+  border-radius: 5px;
+  box-shadow: 2px 2px 8px darkgray; }
+  @media screen and (max-width: 680px) {
+    .kosm_foto_leve {
+      position: static;
+      margin: 0px 0px 1em 0px; } }
+  .kosm_foto_leve img {
+    /* @include col(1/3, $gutter: 0);*/
+    height: 200px;
+    overflow: hidden;
+    border-color: white;
+    border-width: 2px;
+    border-style: groove;
+    margin-right: 2em;
+    margin-bottom: 2em;
+    /*float: left;*/ }
+    @media screen and (max-width: 680px) {
+      .kosm_foto_leve img {
+        *zoom: 1;
+        float: left;
+        clear: none;
+        text-align: inherit;
+        width: 100%;
+        margin-left: 0%;
+        margin-right: 3%;
+        margin-bottom: 1em; }
+        .kosm_foto_leve img:before, .kosm_foto_leve img:after {
+          content: '';
+          display: table; }
+        .kosm_foto_leve img:after {
+          clear: both; }
+        .kosm_foto_leve img:last-child {
+          margin-right: 0%; } }
+  .kosm_foto_leve p {
+    /* @include col(2/3, $gutter: 0);*/
+    display: block;
+    margin: 0;
+    color: black; }
+    @media screen and (max-width: 680px) {
+      .kosm_foto_leve p {
+        *zoom: 1;
+        float: left;
+        clear: none;
+        text-align: inherit;
+        width: 100%;
+        margin-left: 0%;
+        margin-right: 3%; }
+        .kosm_foto_leve p:before, .kosm_foto_leve p:after {
+          content: '';
+          display: table; }
+        .kosm_foto_leve p:after {
+          clear: both; }
+        .kosm_foto_leve p:last-child {
+          margin-right: 0%; } }
+
+.mezo_foto_leve {
+  position: relative;
+  padding: 1em;
+  clear: both;
+  display: block;
+  background: gainsboro;
+  overflow: hidden;
+  min-height: 250px;
+  margin-bottom: 1em;
+  /*overflow: hidden;*/
+  border-style: solid;
+  border-width: 0px;
+  border-color: darkgray;
+  border-radius: 5px;
+  box-shadow: 2px 2px 8px darkgray; }
+  @media screen and (max-width: 680px) {
+    .mezo_foto_leve {
+      position: static;
+      margin: 0px 0px 1em 0px; } }
+  .mezo_foto_leve img {
+    *zoom: 1;
+    float: left;
+    clear: none;
+    text-align: inherit;
+    width: 33.33333%;
+    margin-left: 0%;
+    margin-right: 0%;
+    width: 20%;
+    border-color: white;
+    border-width: 2px;
+    border-style: groove;
+    margin-right: 2em;
+    float: left; }
+    .mezo_foto_leve img:before, .mezo_foto_leve img:after {
+      content: '';
+      display: table; }
+    .mezo_foto_leve img:after {
+      clear: both; }
+    .mezo_foto_leve img:last-child {
+      margin-right: 0%; }
+    @media screen and (max-width: 680px) {
+      .mezo_foto_leve img {
+        *zoom: 1;
+        float: left;
+        clear: none;
+        text-align: inherit;
+        width: 100%;
+        margin-left: 0%;
+        margin-right: 3%;
+        margin-bottom: 1em; }
+        .mezo_foto_leve img:before, .mezo_foto_leve img:after {
+          content: '';
+          display: table; }
+        .mezo_foto_leve img:after {
+          clear: both; }
+        .mezo_foto_leve img:last-child {
+          margin-right: 0%; } }
+  .mezo_foto_leve p {
+    *zoom: 1;
+    float: left;
+    clear: none;
+    text-align: inherit;
+    width: 66.66667%;
+    margin-left: 0%;
+    margin-right: 0%;
+    display: block;
+    margin: 0;
+    color: black; }
+    .mezo_foto_leve p:before, .mezo_foto_leve p:after {
+      content: '';
+      display: table; }
+    .mezo_foto_leve p:after {
+      clear: both; }
+    .mezo_foto_leve p:last-child {
+      margin-right: 0%; }
+    @media screen and (max-width: 680px) {
+      .mezo_foto_leve p {
+        *zoom: 1;
+        float: left;
+        clear: none;
+        text-align: inherit;
+        width: 100%;
+        margin-left: 0%;
+        margin-right: 3%; }
+        .mezo_foto_leve p:before, .mezo_foto_leve p:after {
+          content: '';
+          display: table; }
+        .mezo_foto_leve p:after {
+          clear: both; }
+        .mezo_foto_leve p:last-child {
+          margin-right: 0%; } }
+
+/*--------------------KONEC KOSMETIKY----------------------*/
 .telefon_c {
   font-family: "Raleway", sans-serif;
   font-size: 1.5em;
