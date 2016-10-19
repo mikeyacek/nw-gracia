@@ -53,7 +53,7 @@
 			<div class="logo">
 				<a href="<?php echo home_url(); ?>">
 					<!-- svg logo - toddmotto.com/mastering-svg-use-for-a-retina-web-fallbacks-with-png-script -->
-					<img src="<?php echo get_template_directory_uri(); ?>/img/gracia_vektor.svg" alt="Logo" class="logo-img">
+					<img src="<?php echo get_template_directory_uri(); ?>/img/gracia_vektor_sedivy.svg" alt="Logo" class="logo-img">
 				</a>
 			</div>
 
@@ -69,6 +69,8 @@
 		$image02 = get_field( 'dlazdice_img_2', 'option' );
 		$image03 = get_field( 'dlazdice_img_3', 'option' );
 		$image04 = get_field( 'dlazdice_img_4', 'option' );
+		$image05 = get_field( 'dlazdice_img_5', 'option' );
+		$image06 = get_field( 'dlazdice_img_6', 'option' );
 	
 ?>
 				<div class="dlazdice-blok">
@@ -108,6 +110,25 @@
 						</div>
 
 					</a>
+					<a href="<?php echo get_site_url(); ?>/?page_id=52" class="dlazdice" style="background-image:url('<?php echo $image05['url']; ?>');">
+
+						<div class="dlazdice-text">
+							<h3>
+								<?php the_field('dlazdice_popis_5', 'option'); ?>
+							</h3>
+						</div>
+
+					</a>
+					<a href="<?php echo get_site_url(); ?>/?page_id=52" class="dlazdice" style="background-image:url('<?php echo $image06['url']; ?>');">
+
+						<div class="dlazdice-text">
+							<h3>
+								<?php the_field('dlazdice_popis_6', 'option'); ?>
+							</h3>
+						</div>
+
+					</a>
+
 
 
 				</div>

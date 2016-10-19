@@ -1,11 +1,11 @@
 /*!
- * Theme Name: Salon Grácia
- * Theme URI: http://novotnyweb.cz
- * Description: Salon Grácia, šablona WP
- * Version: 0.0.1
- * Author: Marek Novotný
- * Author URI: http://novotnyweb.cz
- * Tags: grácia
+ * Theme Name: HTML5 Blank
+ * Theme URI: http://html5blank.com
+ * Description: HTML5 Blank WordPress Theme
+ * Version: 1.5.0
+ * Author: Todd Motto (@toddmotto)
+ * Author URI: http://toddmotto.com
+ * Tags: Blank, HTML5, CSS3
  *
  * License: MIT
  * License URI: http://opensource.org/licenses/mit-license.php
@@ -26,6 +26,9 @@
 /**
  * Colors
  */
+/**
+* Ramecky
+*/
 /**
  * Grid
  */
@@ -475,14 +478,23 @@ main {
         margin-right: 0%; } }
 
 .platno {
-  background-color: #240000;
+  background-color: white;
   border-radius: 5px;
+  color: black;
   padding: 2em; }
   .platno h1 {
     font-family: "Cormorant Garamond", serif;
     font-size: 2em;
     text-transform: uppercase;
-    color: white; }
+    color: black; }
+  .platno a {
+    color: black; }
+    .platno a:visited {
+      color: black; }
+    .platno a:hover {
+      color: orangered; }
+    .platno a:active, .platno a:focus {
+      color: #240000; }
   @media screen and (max-width: 680px) {
     .platno {
       padding: 0.5em; } }
@@ -542,9 +554,10 @@ footer {
   min-height: 100px;
   overflow: hidden;
   border-style: solid;
-  border-width: 1px;
-  border-color: white;
-  border-radius: 5px; }
+  border-width: 0px;
+  border-color: darkgray;
+  border-radius: 5px;
+  box-shadow: 2px 2px 8px darkgray; }
   @media screen and (max-width: 680px) {
     .osobni_foto_leve {
       position: static;
@@ -636,9 +649,10 @@ footer {
   min-height: 100px;
   overflow: hidden;
   border-style: solid;
-  border-width: 1px;
-  border-color: white;
-  border-radius: 5px; }
+  border-width: 0px;
+  border-color: darkgray;
+  border-radius: 5px;
+  box-shadow: 2px 2px 8px darkgray; }
   @media screen and (max-width: 680px) {
     .osobni_foto_prave {
       position: static;
@@ -918,7 +932,7 @@ footer {
 .logo-img {
   margin: 2em; }
 
-.search {
+.search-boxik {
   position: absolute;
   margin-top: 8em;
   right: 0px;
@@ -927,7 +941,8 @@ footer {
   border-radius: 5px; }
 
 .search-input {
-  background-color: gainsboro; }
+  background-color: gainsboro;
+  color: black; }
 
 .search-submit {
   background-color: #240000;

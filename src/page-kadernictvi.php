@@ -81,7 +81,7 @@ if( !empty($image2) ): ?>
 		<article>
 
 			<h2>
-				<?php _e( 'Tady nic není, asi jste se překlepli nebo co.', 'html5blank' ); ?>
+				<?php _e( 'Tady nic není, asi jste se překlepli.', 'html5blank' ); ?>
 			</h2>
 
 		</article>

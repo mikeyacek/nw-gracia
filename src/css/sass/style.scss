@@ -68,14 +68,18 @@
     }
 
     .platno {
-        background-color: $tmavsi-pozadi;
+        background-color: $svetle-pozadi;
         border-radius: $border-radius;
+        color: $text-content-color;
         padding: 2em;
         h1 {
             font-family: $font-family-header;
             font-size: 2em;
             text-transform: uppercase;
-            color: white;
+            color: $text-content-color;
+        }
+        a {
+            @include links($text-content-color, $text-content-color, $telefon-color, $tmavsi-pozadi);
         }
         @media screen and (max-width: 680px) {
             padding: 0.5em;
@@ -119,10 +123,11 @@
         margin-bottom: $box-margin;
         min-height: 100px;
         overflow: hidden;
-        border-style: solid;
-        border-width: 1px;
+        border-style: $border-style;
+        border-width: $border-width;
         border-color: $border-color;
         border-radius: $border-radius;
+        box-shadow: $box-shadow;
         @media screen and (max-width: 680px) {
             position: static;
             margin: 0px 0px 1em 0px;
@@ -165,10 +170,11 @@
         margin-bottom: 2em;
         min-height: 100px;
         overflow: hidden;
-        border-style: solid;
-        border-width: 1px;
+        border-style: $border-style;
+        border-width: $border-width;
         border-color: $border-color;
         border-radius: $border-radius;
+        box-shadow: $box-shadow;
         @media screen and (max-width: 680px) {
             position: static;
             margin: 0px 0px 1em 0px;
@@ -339,7 +345,7 @@
     
     // KONEC FOTOGRAFII //
     // MENU NAVIGACE
-    .search {
+    .search-boxik {
         position: absolute;
         margin-top: $search-top-padding;
         right: 0px;
@@ -350,6 +356,7 @@
 
     .search-input {
         background-color: $box-color;
+        color: $text-content-color;
     }
 
     .search-submit {

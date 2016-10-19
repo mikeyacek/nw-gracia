@@ -3,6 +3,22 @@
  * ---
  */
 
+@mixin links ($link, $visited, $hover, $active) {
+    & {
+        color: $link;
+        &:visited {
+            color: $visited;
+        }
+        &:hover {
+            color: $hover;
+        }
+        &:active, &:focus {
+            color: $active;
+        }
+    }
+}
+
+
 
 /**
  * Typography
@@ -22,14 +38,23 @@ $podnazev_webu_size: 2em;
  */
 
 $text-color: white;
+$text-content-color: black;
 $body-bg: #420001;
 $selection-bg: #04A4CC;
 $tmavsi-pozadi: #240000;
-$border-color: white;
+$border-color: darkgray;
 $box-color: gainsboro;
 $box-logo-color: silver;
 $box-text-color: black;
 $telefon-color: orangered;
+$svetle-pozadi: white;
+
+/**
+* Ramecky
+*/
+$box-shadow: 2px 2px 8px darkgray;
+$border-width: 0px;
+$border-style: solid;
 
 
 /**
