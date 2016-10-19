@@ -92,7 +92,7 @@ if( !empty($image2) ): ?>
 	</section>
 	<!-- /section -->
 </main>
-
+<!--GET SIDEBAR-->
 <?php get_sidebar(); ?>
 
 <?php get_footer(); ?>
