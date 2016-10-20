@@ -86,7 +86,7 @@
 						</div>
 
 					</a>
-					<a href="<?php echo get_site_url(); ?>/?page_id=8" class="dlazdice" style="background-image:url('<?php echo $image02['url']; ?>');">
+					<a href="<?php echo get_site_url(); ?>/?page_id=187" class="dlazdice" style="background-image:url('<?php echo $image02['url']; ?>');">
 
 						<div class="dlazdice-text">
 							<h3>

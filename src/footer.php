@@ -19,14 +19,14 @@
 
 <script src="https://rawgithub.com/WickyNilliams/headroom.js/gh-pages/assets/scripts/main.js"></script>
 
-<script>
+<!--<script>
 // grab an element
 var myElement = document.querySelector("header");
 // construct an instance of Headroom, passing the element
 var headroom  = new Headroom(myElement);
 // initialise
 headroom.init();
-</script> 
+</script>--> 
 
 		<!-- analytics -->
 		<script>
