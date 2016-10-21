@@ -14,7 +14,7 @@
 
 		<div class="fotky_kadernictvi_blok">
 
-			<div class="mezo_foto_leve">
+			<div class="osobni_foto_leve">
 				<?php 
 
 $image1 = get_field('osobni_fotografie_1');
@@ -52,7 +52,7 @@ if( !empty($image1) ): ?>
 				</div>
 			</div>
 
-            <div class="mezo_foto_leve">
+            <div class="osobni_foto_leve">
 				<?php 
 
 

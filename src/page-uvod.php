@@ -1,4 +1,4 @@
-<?php /* Template Name: Šablona kosmetika-ultrazvuková špachtle */ ?>
+<?php /* Template Name: Úvod */ ?>
 
 <?php get_header(); ?>
 
@@ -14,10 +14,11 @@
 
 		<div class="fotky_kadernictvi_blok">
 
-			<div class="mezo_foto_leve">
+			<!--<div class="osobni_foto_leve">
 				<?php 
 
 $image1 = get_field('osobni_fotografie_1');
+$warning = get_field('warning');
 
 
 
@@ -25,13 +26,13 @@ if( !empty($image1) ): ?>
 
 				<img src="<?php echo $image1['url']; ?>" alt="<?php echo $image1['alt']; ?>" />
 				<?php the_field('osobni_fotografie_1-popis'); ?>
+-->
 
+				<!--/*<div class="objednavka_kad_leva">První ošetření s jednou aktivní látkou (colagen): <span class="telefon_c"><?php the_field('cena_mezoterapie'); ?></span></div>*/-->
 
-				<div class="objednavka_kad_leva">Cena (+ sérum dle typu pleti): <span class="telefon_c"><?php the_field('cena_mezoterapie'); ?></span></div>
-
-				<?php endif; ?>
+	<!--			<?php endif; ?>
 			</div>
-
+-->
 			
 
 
@@ -39,14 +40,40 @@ if( !empty($image1) ): ?>
 			<div class="text_kadernictvi_blok">
 				<?php the_field('text_clanku'); ?>
 			</div>
+            			<!--<div class="nejcastejsi_dotazy">
+				<?php the_field('nejcastejsi_dotazy'); ?>-->
+			<!--</div>
 			<div class="sloupecky">
-				
+				<div class="vyhody">
+					<?php the_field('vyhody'); ?>
+				</div>
 				<div class="nutno_dodrzet">
 					<?php the_field('nutno_dodrzet'); ?>
 				</div>
 			</div>
-			
-			
+
+            <div class="osobni_foto_leve">
+				<?php 
+
+
+$image2 = get_field('osobni_fotografie_2');
+
+
+if( !empty($image2) ): ?>
+
+				<img src="<?php echo $image2['url']; ?>" alt="<?php echo $image2['alt']; ?>" />
+				<?php the_field('osobni_fotografie_2-popis'); ?>-->
+
+
+				<!--/*<div class="objednavka_kad_leva">Cena: <span class="telefon_c"><?php the_field('cena_pripravku'); ?></span></div>*/-->
+
+			<!--	<?php endif; ?>
+			</div>
+			<div class="upozorneni">
+				<img src="<?php echo $warning['url']; ?>" alt="<?php echo $warning['alt']; ?>" />
+				<?php the_field('upozorneni'); ?>
+			</div>-->
+
 
 			
 

@@ -52,7 +52,7 @@ if( !empty($image2) ): ?>
 		</div>
 
 		<div class="text_kadernictvi_blok">
-			<?php the_field('text_clanku_o_kadernictvi'); ?>
+			<?php the_field('text_clanku'); ?>
 		</div>
 
 		<!-- +++++++++++++++++++++++++++++++++++++ KONEC DESIGNU ++++++++++++++++++++++++++++++++++++++++++ -->

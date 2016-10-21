@@ -37,7 +37,7 @@ if( !empty($image1) ): ?>
 
 
 			<div class="text_kadernictvi_blok">
-				<?php the_field('text_clanku_o_keratinu'); ?>
+				<?php the_field('text_clanku'); ?>
 			</div>
 			<div class="sloupecky">
 				<div class="vyhody">

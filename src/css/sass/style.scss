@@ -21,14 +21,14 @@
     // @import "nw-gracia";
     @import "jeet/index";
     body {
-        @include center(960px);
+        /*@include center(960px);*/
     }
     
     p {
         text-align: justify;
         // margin-bottom: $box-margin;
         letter-spacing: 0.75px;
-        @media screen and (max-width: 680px) {
+        @media screen and (max-width: $mob-break) {
             text-align: left;
         }
     }
@@ -46,7 +46,7 @@
         @include col(1/4, $gutter: 0);
         float: left;
         background-color: transparent;
-        @media screen and (max-width: 680px) {
+        @media screen and (max-width: $mob-break) {
             @include column(1/1);
             float: right;
         }
@@ -57,7 +57,7 @@
         padding-right: 0px;
         @include col(3/4, $gutter: 0);
         float: right;
-        @media screen and (max-width: 680px) {
+        @media screen and (max-width: $mob-break) {
             @include column(1/1);
             float: none;
             padding: 0.5em;
@@ -65,11 +65,22 @@
         }
     }
     
+    .wp-caption {
+        background-color: transparent;
+        .wp-caption-text {
+            font-family: $font-family-base;
+            font-size: 1em;
+            text-align: center;
+            padding: 0.5em;
+        }
+    }
+    /****************************** PLATNO **************************************/
+    
     .platno {
         background-color: $svetle-pozadi;
         border-radius: $border-radius;
         color: $text-content-color;
-        padding: 2em;
+        padding: 3em;
         min-height: 100px;
         overflow: hidden;
         h1 {
@@ -104,6 +115,10 @@
             li {
                 list-style-type: $list-style-type;
             }
+            @media screen and (max-width: $mob-break) {
+            @include column(1/1, $gutter: 0,  $cycle: 1);
+            width: 100%;
+        }
         }
         .nutno_dodrzet {
             @include column(1/2, $gutter: 2, $cycle: 2);
@@ -119,6 +134,13 @@
             border-radius: $border-radius;
             p {
                 text-align: left;
+                 ::first-child {
+                    clear: both;
+                    margin-top: 2em;
+                }
+                 ::last-child {
+                    margin-bottom: 2em;
+                }
             }
             ul {
                 padding-left: 1em;
@@ -126,6 +148,10 @@
             li {
                 list-style-type: $list-style-type;
             }
+            @media screen and (max-width: $mob-break) {
+            @include column(1/1, $gutter: 0,  $cycle: 1);
+            width: 100%;
+        }
         }
         .upozorneni {
             clear: both;
@@ -146,7 +172,7 @@
                 margin-right: 2em;
                 drop-shadow: $box-shadow;
                 float: left;
-                @media screen and (max-width: 680px) {
+                @media screen and (max-width: $mob-break) {
                     @include column(1/1);
                     margin-bottom: 1em;
                 }
@@ -157,22 +183,25 @@
                 margin: 0;
                 margin-top: 2em;
                 color: $box-text-color;
-                @media screen and (max-width: 680px) {
+                @media screen and (max-width: $mob-break) {
                     @include column(1/1);
                 }
             }
         }
         .nejcastejsi_dotazy {
             clear: both;
+            margin-top: 3em;
+            margin-bottom: 3em;
         }
-        @media screen and (max-width: 680px) {
+        @media screen and (max-width: $mob-break) {
             padding: 0.5em;
+            
         }
     }
     
     footer {
         clear: both;
-        @media screen and (max-width: 680px) {
+        @media screen and (max-width: $mob-break) {
             @include column(1/1);
         }
     }
@@ -188,7 +217,9 @@
     
     .text_kadernictvi_blok {
         // margin: $box-margin;
-        @media screen and (max-width: 680px) {
+        margin-top: 3em;
+        margin-bottom: 3em;
+        @media screen and (max-width: $mob-break) {
             text-align: left;
             margin-bottom: -9997em;
             padding-bottom: 9999em;
@@ -214,7 +245,7 @@
         border-color: $border-color;
         border-radius: $border-radius;
         box-shadow: $box-shadow;
-        @media screen and (max-width: 680px) {
+        @media screen and (max-width: $mob-break) {
             position: static;
             margin: 0px 0px 1em 0px;
         }
@@ -227,7 +258,7 @@
             border-style: groove;
             margin-right: 2em;
             float: left;
-            @media screen and (max-width: 680px) {
+            @media screen and (max-width: $mob-break) {
                 @include column(1/1);
                 margin-bottom: 1em;
             }
@@ -237,7 +268,7 @@
             display: block;
             margin: 0;
             color: $box-text-color;
-            @media screen and (max-width: 680px) {
+            @media screen and (max-width: $mob-break) {
                 @include column(1/1);
             }
         }
@@ -261,7 +292,7 @@
         border-color: $border-color;
         border-radius: $border-radius;
         box-shadow: $box-shadow;
-        @media screen and (max-width: 680px) {
+        @media screen and (max-width: $mob-break) {
             position: static;
             margin: 0px 0px 1em 0px;
         }
@@ -275,7 +306,7 @@
             border-style: groove;
             margin-left: 2em;
             float: right;
-            @media screen and (max-width: 680px) {
+            @media screen and (max-width: $mob-break) {
                 @include column(1/1);
                 margin-bottom: 1em;
             }
@@ -286,15 +317,14 @@
             display: block;
             margin: 0;
             color: $box-text-color;
-            @media screen and (max-width: 680px) {
+            @media screen and (max-width: $mob-break) {
                 @include column(1/1);
             }
         }
     }
-
     /*--------------- KOSMETIKA --------------------------*/
-
-.kosm_foto_leve {
+    
+    .kosm_foto_leve {
         position: relative;
         padding: $box-padding;
         clear: both;
@@ -302,7 +332,6 @@
         // text-align: left;
         display: block;
         background: $box-color;
-        
         overflow: hidden;
         margin-bottom: 1em;
         /*overflow: hidden;*/
@@ -311,14 +340,12 @@
         border-color: $border-color;
         border-radius: $border-radius;
         box-shadow: $box-shadow;
-        @media screen and (max-width: 680px) {
+        @media screen and (max-width: $mob-break) {
             position: static;
             margin: 0px 0px 1em 0px;
         }
         img {
-           /* @include col(1/3, $gutter: 0);*/
-          
-          
+            /* @include col(1/3, $gutter: 0);*/
             height: 200px;
             overflow: hidden;
             border-color: white;
@@ -328,22 +355,22 @@
             margin-right: 2em;
             margin-bottom: 2em;
             /*float: left;*/
-            @media screen and (max-width: 680px) {
+            @media screen and (max-width: $mob-break) {
                 @include column(1/1);
                 margin-bottom: 1em;
             }
         }
         p {
-           /* @include col(2/3, $gutter: 0);*/
+            /* @include col(2/3, $gutter: 0);*/
             display: block;
             margin: 0;
             color: $box-text-color;
-            @media screen and (max-width: 680px) {
+            @media screen and (max-width: $mob-break) {
                 @include column(1/1);
             }
         }
     }
-
+    
     .mezo_foto_leve {
         position: relative;
         padding: $box-padding;
@@ -361,12 +388,13 @@
         border-color: $border-color;
         border-radius: $border-radius;
         box-shadow: $box-shadow;
-        @media screen and (max-width: 680px) {
+        @media screen and (max-width: $mob-break) {
             position: static;
             margin: 0px 0px 1em 0px;
         }
         img {
-            @include col(1/3, $gutter: 0);
+            @include col(1/3,
+            $gutter: 0);
             width: 20%;
             border-color: white;
             // display: inline;
@@ -374,23 +402,22 @@
             border-style: groove;
             margin-right: 2em;
             float: left;
-            @media screen and (max-width: 680px) {
+            @media screen and (max-width: $mob-break) {
                 @include column(1/1);
                 margin-bottom: 1em;
             }
         }
         p {
-            @include col(2/3, $gutter: 0);
+            @include col(2/3,
+            $gutter: 0);
             display: block;
             margin: 0;
             color: $box-text-color;
-            @media screen and (max-width: 680px) {
+            @media screen and (max-width: $mob-break) {
                 @include column(1/1);
             }
         }
     }
-
-
     /*--------------------KONEC KOSMETIKY----------------------*/
     
     .telefon_c {
@@ -410,7 +437,7 @@
         border-top-width: 1px;
         border-top-style: solid;
         border-top-color: $box-text-color;
-        @media screen and (max-width: 680px) {
+        @media screen and (max-width: $mob-break) {
             @include column(1/1);
             margin-top: 1em;
             position: static;
@@ -426,7 +453,7 @@
         border-top-width: 1px;
         border-top-style: solid;
         border-top-color: $box-text-color;
-        @media screen and (max-width: 680px) {
+        @media screen and (max-width: $mob-break) {
             @include column(1/1);
             margin-top: 1em;
             position: static;
@@ -437,9 +464,10 @@
     .dlazdice-blok {
         clear: both;
         display: block;
-        @media screen and (max-width: 680px) {
-            @include column(1/1);
-            margin: 0.5em;
+        @media screen and (max-width: $mob-break) {
+           /* @include column(1/1);*/
+            /*margin: 0.5em;*/
+            diplay: none;
         }
     }
     
@@ -455,13 +483,17 @@
         background-size: cover;
         height: $vyska-dlazdice;
         background-repeat: no-repeat;
+        border-width: 0.5px;
         border-style: $border-style;
         border-radius: $border-radius;
         margin-bottom: 1em;
         @media screen and (max-width: 680px) {
             @include column(1/1, $gutter: 0);
-            width: 100%;
-            margin: 0px;
+            /*width: 100%;*/
+            /*margin: 0px;*/
+            diplay: none;
+            /*visibility: hidden;*/
+            /*position: static;*/
         }
     }
     
@@ -480,9 +512,11 @@
             color: black;
             text-transform: uppercase;
         }
-        @media screen and (max-width: 680px) {
-            @include column(1/1);
-            margin: 0px;
+        @media screen and (max-width: $mob-break) {
+            /*@include column(1/1);*/
+            /*margin: 0px;*/
+            diplay: none;
+            
         }
     }
     
@@ -516,7 +550,7 @@
         display: inline;
         float: left;
         margin-left: 0px;
-        @media screen and (max-width: 680px) {
+        @media screen and (max-width: $mob-break) {
             @include column(1/1);
         }
     }
@@ -534,6 +568,14 @@
         padding: $box-padding;
         background-color: $tmavsi-pozadi;
         border-radius: $border-radius;
+        @media screen and (max-width: $mob-break) {
+            /*@include column(1/1);*/
+            position: static;
+            background-color: transparent;
+            margin: 0 auto;
+        }
+        
+        
     }
     
     .search-input {
@@ -558,6 +600,9 @@
         }
         .menu-item {
             margin-bottom: 1em;
+        }
+        @media screen and (max-width: $mob-break) {
+            display: none;
         }
     }
     
@@ -587,4 +632,52 @@
     
     .headroom--unpinned {
         transform: translateY(-100%);
+    }
+    /*---------------TABULKY----------------------*/
+    
+    .tablepress {
+        box-shadow: $box-shadow;
+        border-width: 1px;
+        border-style: solid;
+        border-color: $border-color;
+        max-width: 80%;
+        margin: 0 auto;
+        margin-top: 2em;
+        border-radius: $border-radius !important;
+        tbody {
+            td {
+                padding-left: 2em;
+                padding-right: 2em;
+                text-align: left;
+                vertical-align: middle;
+            }
+        }
+        td {
+            padding: 0.5em !important;
+        }
+        h1 {
+            color: $text-color;
+        }
+        .row-1 {
+            background-color: $body-bg;
+            color: white;
+        }
+        .column-2 {
+            width: 20%;
+            text-align: right;
+            background-color: $box-color;
+            color: $text-content-color;
+            font-size: 1.2em;
+            vertical-align: middle;
+        }
+    }
+    /*----------------------- ČLÁNKY IN ----------------------------*/
+    
+    .img-in {
+        box-shadow: $box-shadow;
+        border-style: solid;
+        border-color: $tmavsi-pozadi;
+        border-radius: $border-radius;
+        margin-top: 2em;
+        margin-bottom: 2em;
     }

@@ -95,7 +95,7 @@
 						</div>
 
 					</a>
-					<a href="<?php echo get_site_url(); ?>/?page_id=12" class="dlazdice" style="background-image:url('<?php echo $image03['url']; ?>');">
+					<a href="<?php echo get_site_url(); ?>/?page_id=511" class="dlazdice" style="background-image:url('<?php echo $image03['url']; ?>');">
 
 						<div class="dlazdice-text">
 							<h3>
@@ -104,7 +104,7 @@
 						</div>
 
 					</a>
-					<a href="<?php echo get_site_url(); ?>/?page_id=14" class="dlazdice" style="background-image:url('<?php echo $image04['url']; ?>');">
+					<a href="<?php echo get_site_url(); ?>/?page_id=508" class="dlazdice" style="background-image:url('<?php echo $image04['url']; ?>');">
 
 						<div class="dlazdice-text">
 							<h3>
@@ -113,7 +113,7 @@
 						</div>
 
 					</a>
-					<a href="<?php echo get_site_url(); ?>/?page_id=52" class="dlazdice" style="background-image:url('<?php echo $image05['url']; ?>');">
+					<a href="<?php echo get_site_url(); ?>/?page_id=524" class="dlazdice" style="background-image:url('<?php echo $image05['url']; ?>');">
 
 						<div class="dlazdice-text">
 							<h3>
@@ -122,7 +122,7 @@
 						</div>
 
 					</a>
-					<a href="<?php echo get_site_url(); ?>/?page_id=52" class="dlazdice" style="background-image:url('<?php echo $image06['url']; ?>');">
+					<a href="<?php echo get_site_url(); ?>/?page_id=514" class="dlazdice" style="background-image:url('<?php echo $image06['url']; ?>');">
 
 						<div class="dlazdice-text">
 							<h3>
