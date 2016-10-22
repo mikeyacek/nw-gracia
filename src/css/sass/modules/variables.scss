@@ -31,6 +31,7 @@ $font-size-base: 140%;
 $line-height-base: 1.5;
 $nazev_webu_size: 4em;
 $podnazev_webu_size: 2em;
+$zarovnani: justify;
 
 
 /**
@@ -80,4 +81,8 @@ $vyska-dlazdice: 250px;
 
 $rychlost-hlavicky: 500ms;
 
-$mob-break: 680px;
+/*Hodnota, kdy se zobrazení přepne na mobilní režim (šířka)*/
+$mob-break: 780px;
+
+/*Šířka obrázku v šedivém boxu*/
+$box-picture-size: 25%;

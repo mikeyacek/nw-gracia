@@ -10,11 +10,43 @@
 			<?php the_title(); ?>
 		</h1>
 
+		<?php if (have_posts()): while (have_posts()) : the_post(); ?>
+
+			<!-- article -->
+			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+
+				<?php the_content(); ?>
+
+				<?php comments_template( '', true ); // Remove if you don't want comments ?>
+
+				<br class="clear">
+
+				<?php edit_post_link(); ?>
+
+			</article>
+			<!-- /article -->
+
+			<?php endwhile; ?>
+
+			<?php else: ?>
+
+			<!-- article -->
+			<article>
+
+				<h2>
+					<?php _e( 'Tady nic není, asi jste se překlepli.', 'html5blank' ); ?>
+				</h2>
+
+			</article>
+			<!-- /article -->
+
+			<?php endif; ?>
+
 		<!-- +++++++++++++++++++++++++++++++++++++ DESIGN +++++++++++++++++++++++++++++++++++++++++++++++++ -->
 
 		<div class="fotky_kadernictvi_blok">
 
-			<div class="mezo_foto_leve">
+			<div class="osobni_foto_leve">
 				<?php 
 
 $image1 = get_field('osobni_fotografie_1');
@@ -52,7 +84,7 @@ if( !empty($image1) ): ?>
 				<?php the_field('nejcastejsi_dotazy'); ?>
 			</div>
 
-			<div class="mezo_foto_leve">
+			<div class="osobni_foto_leve">
 				<?php 
 
 
@@ -72,37 +104,7 @@ if( !empty($image2) ): ?>
 
 			<!-- +++++++++++++++++++++++++++++++++++++ KONEC DESIGNU ++++++++++++++++++++++++++++++++++++++++++ -->
 
-			<?php if (have_posts()): while (have_posts()) : the_post(); ?>
-
-			<!-- article -->
-			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
-				<?php the_content(); ?>
-
-				<?php comments_template( '', true ); // Remove if you don't want comments ?>
-
-				<br class="clear">
-
-				<?php edit_post_link(); ?>
-
-			</article>
-			<!-- /article -->
-
-			<?php endwhile; ?>
-
-			<?php else: ?>
-
-			<!-- article -->
-			<article>
-
-				<h2>
-					<?php _e( 'Tady nic není, asi jste se překlepli.', 'html5blank' ); ?>
-				</h2>
-
-			</article>
-			<!-- /article -->
-
-			<?php endif; ?>
+			
 
 	</section>
 	<!-- /section -->

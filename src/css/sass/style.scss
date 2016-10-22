@@ -25,11 +25,11 @@
     }
     
     p {
-        text-align: justify;
+        text-align: $zarovnani;
         // margin-bottom: $box-margin;
         letter-spacing: 0.75px;
         @media screen and (max-width: $mob-break) {
-            text-align: left;
+            // text-align: left;
         }
     }
     
@@ -116,9 +116,9 @@
                 list-style-type: $list-style-type;
             }
             @media screen and (max-width: $mob-break) {
-            @include column(1/1, $gutter: 0,  $cycle: 1);
-            width: 100%;
-        }
+                @include column(1/1, $gutter: 0, $cycle: 1);
+                width: 100%;
+            }
         }
         .nutno_dodrzet {
             @include column(1/2, $gutter: 2, $cycle: 2);
@@ -149,9 +149,9 @@
                 list-style-type: $list-style-type;
             }
             @media screen and (max-width: $mob-break) {
-            @include column(1/1, $gutter: 0,  $cycle: 1);
-            width: 100%;
-        }
+                @include column(1/1, $gutter: 0, $cycle: 1);
+                width: 100%;
+            }
         }
         .upozorneni {
             clear: both;
@@ -195,12 +195,13 @@
         }
         @media screen and (max-width: $mob-break) {
             padding: 0.5em;
-            
         }
     }
     
     footer {
         clear: both;
+        padding: 2em;
+        text-align: center;
         @media screen and (max-width: $mob-break) {
             @include column(1/1);
         }
@@ -220,9 +221,8 @@
         margin-top: 3em;
         margin-bottom: 3em;
         @media screen and (max-width: $mob-break) {
-            text-align: left;
-            margin-bottom: -9997em;
-            padding-bottom: 9999em;
+            
+            
         }
     }
     
@@ -234,9 +234,10 @@
         padding: $box-padding;
         clear: both;
         // height: auto;
-        // text-align: left;
+        text-align: $zarovnani;
         display: block;
         background: $box-color;
+        min-height: 100px;
         overflow: hidden;
         margin-bottom: 1em;
         /*overflow: hidden;*/
@@ -250,8 +251,8 @@
             margin: 0px 0px 1em 0px;
         }
         img {
-            @include col(1/3, $gutter: 0);
-            width: 20%;
+            // @include col(1/3, $gutter: 0);
+            width: $box-picture-size;
             border-color: white;
             // display: inline;
             border-width: 2px;
@@ -264,9 +265,13 @@
             }
         }
         p {
-            @include col(2/3, $gutter: 0);
+            // @include col(2/3, $gutter: 0);
             display: block;
-            margin: 0;
+            margin-top: 0px;
+            margin-right: 2em;
+            box-sizing: initial;
+            height: 100%;
+            // padding: 0 !important;
             color: $box-text-color;
             @media screen and (max-width: $mob-break) {
                 @include column(1/1);
@@ -297,10 +302,10 @@
             margin: 0px 0px 1em 0px;
         }
         img {
-            @include col(1/3,
-            $offset: 2/3, $gutter: 0);
-            width: 20%;
-            border-color: white;
+            // @include col(1/3,
+            // $offset: 2/3, $gutter: 0);
+            width: $box-picture-size;
+            border-color: $border-color;
             // display: inline;
             border-width: 2px;
             border-style: groove;
@@ -312,10 +317,13 @@
             }
         }
         p {
-            @include col(2/3,
-            $gutter: 0);
+            // @include col(2/3,
+            // $gutter: 0);
             display: block;
-            margin: 0;
+            margin-top: 0px;
+            margin-right: 2em;
+            box-sizing: initial;
+            height: 100%;
             color: $box-text-color;
             @media screen and (max-width: $mob-break) {
                 @include column(1/1);
@@ -329,7 +337,7 @@
         padding: $box-padding;
         clear: both;
         // height: auto;
-        // text-align: left;
+        text-align: $zarovnani;
         display: block;
         background: $box-color;
         overflow: hidden;
@@ -376,7 +384,7 @@
         padding: $box-padding;
         clear: both;
         // height: auto;
-        // text-align: left;
+        text-align: $zarovnani;
         display: block;
         background: $box-color;
         overflow: hidden;
@@ -413,6 +421,7 @@
             display: block;
             margin: 0;
             color: $box-text-color;
+            // text-align: justify;
             @media screen and (max-width: $mob-break) {
                 @include column(1/1);
             }
@@ -429,14 +438,19 @@
     }
     
     .objednavka_kad_prava {
-        position: absolute;
+        // position: absolute;
         display: block;
+        margin-top: 1.5em;
+        // margin-left: 1em;
         bottom: $box-padding;
         left: $box-padding;
         color: $box-text-color;
         border-top-width: 1px;
         border-top-style: solid;
         border-top-color: $box-text-color;
+        text-align: left;
+        float: left;
+        width: 60%;
         @media screen and (max-width: $mob-break) {
             @include column(1/1);
             margin-top: 1em;
@@ -445,18 +459,24 @@
     }
     
     .objednavka_kad_leva {
-        position: absolute;
+        // position: absolute;
         display: block;
+        margin-top: 1.5em;
+        margin-right: 2em;
         bottom: $box-padding;
         right: $box-padding;
         color: $box-text-color;
         border-top-width: 1px;
         border-top-style: solid;
         border-top-color: $box-text-color;
+        text-align: right;
+        float: right;
+        width: 60%;
         @media screen and (max-width: $mob-break) {
             @include column(1/1);
             margin-top: 1em;
             position: static;
+            width: 100%;
         }
     }
     
@@ -465,9 +485,8 @@
         clear: both;
         display: block;
         @media screen and (max-width: $mob-break) {
-           /* @include column(1/1);*/
+            /* @include column(1/1);*/
             /*margin: 0.5em;*/
-            diplay: none;
         }
     }
     
@@ -491,7 +510,6 @@
             @include column(1/1, $gutter: 0);
             /*width: 100%;*/
             /*margin: 0px;*/
-            diplay: none;
             /*visibility: hidden;*/
             /*position: static;*/
         }
@@ -515,8 +533,6 @@
         @media screen and (max-width: $mob-break) {
             /*@include column(1/1);*/
             /*margin: 0px;*/
-            diplay: none;
-            
         }
     }
     
@@ -574,8 +590,6 @@
             background-color: transparent;
             margin: 0 auto;
         }
-        
-        
     }
     
     .search-input {
@@ -669,6 +683,9 @@
             color: $text-content-color;
             font-size: 1.2em;
             vertical-align: middle;
+        }
+        @media screen and (max-width: $mob-break) {
+            max-width: 100%;
         }
     }
     /*----------------------- ČLÁNKY IN ----------------------------*/

@@ -35,6 +35,15 @@
 
 <body <?php body_class(); ?>>
 
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/cs_CZ/sdk.js#xfbml=1&version=v2.8";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
 	<!-- wrapper -->
 	<div class="wrapper">
 
@@ -64,7 +73,7 @@
 			<!-- Search box -->
 				<?php get_template_part('searchform'); ?>
 			<!-- / Search box -->
-
+<?php if (is_front_page()): ?>
 			<?php
 	
 		$image01 = get_field( 'dlazdice_img_1', 'option' );
@@ -73,6 +82,9 @@
 		$image04 = get_field( 'dlazdice_img_4', 'option' );
 		$image05 = get_field( 'dlazdice_img_5', 'option' );
 		$image06 = get_field( 'dlazdice_img_6', 'option' );
+		$image07 = get_field( 'dlazdice_img_7', 'option' );
+		$image08 = get_field( 'dlazdice_img_8', 'option' );
+		$image09 = get_field( 'dlazdice_img_9', 'option' );
 	
 ?>
 				<div class="dlazdice-blok"> <!--ROZDELENI BLOKU-->
@@ -131,10 +143,38 @@
 						</div>
 
 					</a>
+					<a href="<?php echo get_site_url(); ?>/?page_id=643" class="dlazdice" style="background-image:url('<?php echo $image07['url']; ?>');">
+
+						<div class="dlazdice-text">
+							<h3>
+								<?php the_field('dlazdice_popis_7', 'option'); ?>
+							</h3>
+						</div>
+
+					</a>
+					<a href="<?php echo get_site_url(); ?>/?page_id=388" class="dlazdice" style="background-image:url('<?php echo $image08['url']; ?>');">
+
+						<div class="dlazdice-text">
+							<h3>
+								<?php the_field('dlazdice_popis_8', 'option'); ?>
+							</h3>
+						</div>
+
+					</a>
+					<a href="<?php echo get_site_url(); ?>/?page_id=444" class="dlazdice" style="background-image:url('<?php echo $image09['url']; ?>');">
+
+						<div class="dlazdice-text">
+							<h3>
+								<?php the_field('dlazdice_popis_9', 'option'); ?>
+							</h3>
+						</div>
+
+					</a>
 
 
 
 				</div>
+				<?php endif; ?>
 				<!-- oddělovač -->
 				<!-- <hr class="hr-style"> -->
 				<!-- /oddělovač -->
