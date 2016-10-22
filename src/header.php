@@ -175,6 +175,8 @@
 
 				</div>
 				<?php endif; ?>
+				<div class="zarazka"></div>
+				
 				<!-- oddělovač -->
 				<!-- <hr class="hr-style"> -->
 				<!-- /oddělovač -->

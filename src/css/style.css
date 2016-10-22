@@ -1315,7 +1315,15 @@ footer {
     font-size: 1em;
     text-transform: none; }
   .sub-menu .menu-item {
-    margin-bottom: 0; }
+    margin-bottom: 0.5em;
+    border-top-style: solid;
+    border-top-color: orangered;
+    border-top-width: 0.3px;
+    /*border-top-left-radius: $border-radius;*/
+    background-color: #240000;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    padding-left: 1em; }
 
 /*HEADROOM*/
 .headroom {
@@ -1368,5 +1376,23 @@ footer {
   border-radius: 5px;
   margin-top: 2em;
   margin-bottom: 2em; }
+
+.zarazka {
+  clear: both;
+  display: block;
+  width: 1.5em; }
+
+.breadcrumbs {
+  clear: both;
+  display: block;
+  padding: 0.5em;
+  padding-left: 30%;
+  margin-top: 1.5em;
+  margin-bottom: 1em;
+  background-color: #240000; }
+  @media screen and (max-width: 780px) {
+    .breadcrumbs {
+      padding-left: 1em;
+      float: none; } }
 
 /*# sourceMappingURL=style.css.map */
