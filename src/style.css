@@ -413,11 +413,25 @@ input[type="search"] {
  * Apply a clearfix to an element.
  */
 body {
-  /*@include center(960px);*/ }
+  /*@include center(960px);*/
+  background: #240000;
+  background: -webkit-gradient(left top, right top, color-stop(19%, #240000), color-stop(23%, #240000), color-stop(46%, #420001), color-stop(61%, #420001));
+  background: -webkit-linear-gradient(left, #240000 19%, #240000 23%, #420001 46%, #420001 61%);
+  background: linear-gradient(to right, #240000 19%, #240000 23%, #420001 46%, #420001 61%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr= '#240000', endColorstr='#420001', GradientType=1 ); }
 
 p {
   text-align: justify;
   letter-spacing: 0.75px; }
+  @media screen and (max-width: 780px) {
+    p {
+      text-align: left; } }
+
+li {
+  text-align: justify; }
+  @media screen and (max-width: 780px) {
+    li {
+      text-align: left; } }
 
 .header {
   position: relative; }
@@ -426,33 +440,20 @@ p {
   white-space: nowrap; }
 
 aside {
-  margin-top: 2em;
-  *zoom: 1;
   float: left;
-  clear: none;
-  text-align: inherit;
   width: 25%;
-  margin-left: 0%;
-  margin-right: 0%;
-  float: left;
+  margin-top: 2em;
   background-color: transparent; }
-  aside:before, aside:after {
-    content: '';
-    display: table; }
-  aside:after {
-    clear: both; }
-  aside:last-child {
-    margin-right: 0%; }
   @media screen and (max-width: 780px) {
     aside {
+      float: right;
       *zoom: 1;
       float: left;
       clear: none;
       text-align: inherit;
       width: 100%;
       margin-left: 0%;
-      margin-right: 3%;
-      float: right; }
+      margin-right: 3%; }
       aside:before, aside:after {
         content: '';
         display: table; }
@@ -462,35 +463,20 @@ aside {
         margin-right: 0%; } }
 
 main {
-  padding: 2em;
-  padding-right: 0px;
-  *zoom: 1;
-  float: left;
-  clear: none;
-  text-align: inherit;
+  float: right;
   width: 75%;
-  margin-left: 0%;
-  margin-right: 0%;
-  float: right; }
-  main:before, main:after {
-    content: '';
-    display: table; }
-  main:after {
-    clear: both; }
-  main:last-child {
-    margin-right: 0%; }
+  padding: 2em 0 2em 2em; }
   @media screen and (max-width: 780px) {
     main {
+      float: none;
+      padding: 0.5em;
       *zoom: 1;
       float: left;
       clear: none;
       text-align: inherit;
       width: 100%;
       margin-left: 0%;
-      margin-right: 3%;
-      float: none;
-      padding: 0.5em;
-      padding-right: 0.5em; }
+      margin-right: 3%; }
       main:before, main:after {
         content: '';
         display: table; }
@@ -500,32 +486,33 @@ main {
         margin-right: 0%; } }
 
 .wp-caption {
+  display: inline-block;
   background-color: transparent; }
   .wp-caption .wp-caption-text {
-    font-family: "Raleway", sans-serif;
-    font-size: 1em;
+    padding-top: 0.5em;
     text-align: center;
-    padding: 0.5em; }
+    font-family: "Raleway", sans-serif;
+    font-size: 1em; }
 
 /****************************** PLATNO **************************************/
 .platno {
-  background-color: white;
-  border-radius: 5px;
-  color: black;
-  padding: 3em;
+  overflow: hidden;
   min-height: 100px;
-  overflow: hidden; }
+  padding: 3em;
+  color: black;
+  border-radius: 5px;
+  background-color: white; }
   .platno h1 {
-    font-family: "Cormorant Garamond", serif;
-    font-size: 2em;
     text-transform: uppercase;
-    color: black; }
+    color: black;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 2em; }
   .platno a {
     color: black; }
     .platno a:visited {
       color: black; }
     .platno a:hover {
-      color: orangered; }
+      color: #5b0507; }
     .platno a:active, .platno a:focus {
       color: #240000; }
   .platno .sloupecky {
@@ -533,23 +520,22 @@ main {
     overflow: hidden;
     margin-bottom: 1em; }
   .platno .vyhody {
+    float: left;
+    height: 100%;
+    margin-top: 1em;
+    margin-bottom: -9997em;
+    padding: 1.5em 1.5em 9999em;
+    color: white;
+    border-radius: 5px;
+    background-color: #240000;
+    box-shadow: 2px 2px 8px darkgray;
     *zoom: 1;
     float: left;
     clear: none;
     text-align: inherit;
     width: 49%;
     margin-left: 0%;
-    margin-right: 2%;
-    padding: 1.5em;
-    margin-top: 1em;
-    margin-bottom: -9997em;
-    padding-bottom: 9999em;
-    float: left;
-    background-color: #240000;
-    color: white;
-    height: 100%;
-    box-shadow: 2px 2px 8px darkgray;
-    border-radius: 5px; }
+    margin-right: 2%; }
     .platno .vyhody:before, .platno .vyhody:after {
       content: '';
       display: table; }
@@ -566,14 +552,14 @@ main {
       list-style-type: circle; }
     @media screen and (max-width: 780px) {
       .platno .vyhody {
+        width: 100%;
         *zoom: 1;
         float: left;
         clear: none;
         text-align: inherit;
         width: 100%;
         margin-left: 0%;
-        margin-right: 0%;
-        width: 100%; }
+        margin-right: 0%; }
         .platno .vyhody:before, .platno .vyhody:after {
           content: '';
           display: table; }
@@ -585,23 +571,22 @@ main {
         .platno .vyhody:nth-child(1n + 1) {
           clear: both; } }
   .platno .nutno_dodrzet {
+    float: left;
+    height: 100%;
+    margin-top: 1em;
+    margin-bottom: -9997em;
+    padding: 1.5em 1.5em 9999em;
+    color: white;
+    border-radius: 5px;
+    background-color: #420001;
+    box-shadow: 2px 2px 8px darkgray;
     *zoom: 1;
     float: left;
     clear: none;
     text-align: inherit;
     width: 49%;
     margin-left: 0%;
-    margin-right: 2%;
-    padding: 1.5em;
-    margin-top: 1em;
-    margin-bottom: -9997em;
-    padding-bottom: 9999em;
-    float: left;
-    background-color: #420001;
-    color: white;
-    height: 100%;
-    box-shadow: 2px 2px 8px darkgray;
-    border-radius: 5px; }
+    margin-right: 2%; }
     .platno .nutno_dodrzet:before, .platno .nutno_dodrzet:after {
       content: '';
       display: table; }
@@ -625,14 +610,14 @@ main {
       list-style-type: circle; }
     @media screen and (max-width: 780px) {
       .platno .nutno_dodrzet {
+        width: 100%;
         *zoom: 1;
         float: left;
         clear: none;
         text-align: inherit;
         width: 100%;
         margin-left: 0%;
-        margin-right: 0%;
-        width: 100%; }
+        margin-right: 0%; }
         .platno .nutno_dodrzet:before, .platno .nutno_dodrzet:after {
           content: '';
           display: table; }
@@ -645,19 +630,19 @@ main {
           clear: both; } }
   .platno .upozorneni {
     clear: both;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    padding: 1em;
+    border-radius: 5px;
+    background-color: lightsalmon;
+    box-shadow: 2px 2px 8px darkgray;
     *zoom: 1;
     float: left;
     clear: none;
     text-align: inherit;
     width: 100%;
     margin-left: 0%;
-    margin-right: 3%;
-    padding: 1em;
-    margin-top: 2em;
-    margin-bottom: 2em;
-    background-color: lightsalmon;
-    box-shadow: 2px 2px 8px darkgray;
-    border-radius: 5px; }
+    margin-right: 3%; }
     .platno .upozorneni:before, .platno .upozorneni:after {
       content: '';
       display: table; }
@@ -666,6 +651,12 @@ main {
     .platno .upozorneni:last-child {
       margin-right: 0%; }
     .platno .upozorneni img {
+      float: left;
+      width: 17%;
+      margin-right: 2em;
+      border-width: 2px;
+      border-style: none;
+      border-color: white;
       *zoom: 1;
       float: left;
       clear: none;
@@ -673,13 +664,7 @@ main {
       width: 25%;
       margin-left: 0%;
       margin-right: 0%;
-      width: 17%;
-      border-color: white;
-      border-width: 2px;
-      border-style: none;
-      margin-right: 2em;
-      drop-shadow: 2px 2px 8px darkgray;
-      float: left; }
+      drop-shadow: 2px 2px 8px darkgray; }
       .platno .upozorneni img:before, .platno .upozorneni img:after {
         content: '';
         display: table; }
@@ -689,14 +674,14 @@ main {
         margin-right: 0%; }
       @media screen and (max-width: 780px) {
         .platno .upozorneni img {
+          margin-bottom: 1em;
           *zoom: 1;
           float: left;
           clear: none;
           text-align: inherit;
           width: 100%;
           margin-left: 0%;
-          margin-right: 3%;
-          margin-bottom: 1em; }
+          margin-right: 3%; }
           .platno .upozorneni img:before, .platno .upozorneni img:after {
             content: '';
             display: table; }
@@ -705,17 +690,16 @@ main {
           .platno .upozorneni img:last-child {
             margin-right: 0%; } }
     .platno .upozorneni p {
+      display: block;
+      margin: 2em 0 0;
+      color: black;
       *zoom: 1;
       float: left;
       clear: none;
       text-align: inherit;
       width: 75%;
       margin-left: 0%;
-      margin-right: 0%;
-      display: block;
-      margin: 0;
-      margin-top: 2em;
-      color: black; }
+      margin-right: 0%; }
       .platno .upozorneni p:before, .platno .upozorneni p:after {
         content: '';
         display: table; }
@@ -769,19 +753,19 @@ footer {
         margin-right: 0%; } }
 
 .hr-style {
+  clear: both;
+  height: 1px;
+  margin: 10px;
+  border: 0;
+  background-image: -webkit-linear-gradient(left, transparent, rgba(0, 0, 0, 0.75), transparent);
+  background-image: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.75), transparent);
   *zoom: 1;
   float: left;
   clear: none;
   text-align: inherit;
   width: 100%;
   margin-left: 0%;
-  margin-right: 3%;
-  clear: both;
-  border: 0;
-  height: 1px;
-  background-image: -webkit-linear-gradient(left, transparent, rgba(0, 0, 0, 0.75), transparent);
-  background-image: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.75), transparent);
-  margin: 10px; }
+  margin-right: 3%; }
   .hr-style:before, .hr-style:after {
     content: '';
     display: table; }
@@ -796,41 +780,41 @@ footer {
 
 .osobni_foto_leve {
   position: relative;
-  padding: 1em;
-  clear: both;
-  text-align: justify;
   display: block;
-  background: gainsboro;
-  min-height: 100px;
+  clear: both;
   overflow: hidden;
+  min-height: 100px;
   margin-bottom: 1em;
+  padding: 1em;
+  text-align: justify;
+  border-width: 0px;
   /*overflow: hidden;*/
   border-style: solid;
-  border-width: 0px;
   border-color: darkgray;
   border-radius: 5px;
+  background: gainsboro;
   box-shadow: 2px 2px 8px darkgray; }
   @media screen and (max-width: 780px) {
     .osobni_foto_leve {
       position: static;
-      margin: 0px 0px 1em 0px; } }
+      margin: 0 0 1em; } }
   .osobni_foto_leve img {
+    float: left;
     width: 25%;
-    border-color: white;
+    margin-right: 2em;
     border-width: 2px;
     border-style: groove;
-    margin-right: 2em;
-    float: left; }
+    border-color: white; }
     @media screen and (max-width: 780px) {
       .osobni_foto_leve img {
+        margin-bottom: 1em;
         *zoom: 1;
         float: left;
         clear: none;
         text-align: inherit;
         width: 100%;
         margin-left: 0%;
-        margin-right: 3%;
-        margin-bottom: 1em; }
+        margin-right: 3%; }
         .osobni_foto_leve img:before, .osobni_foto_leve img:after {
           content: '';
           display: table; }
@@ -840,11 +824,11 @@ footer {
           margin-right: 0%; } }
   .osobni_foto_leve p {
     display: block;
-    margin-top: 0px;
-    margin-right: 2em;
     -moz-box-sizing: initial;
     box-sizing: initial;
     height: 100%;
+    margin-top: 0;
+    margin-right: 2em;
     color: black; }
     @media screen and (max-width: 780px) {
       .osobni_foto_leve p {
@@ -865,43 +849,43 @@ footer {
 
 .osobni_foto_prave {
   position: relative;
-  padding: 1em;
-  clear: both;
-  height: auto;
   display: block;
+  clear: both;
+  overflow: hidden;
+  height: auto;
+  margin-bottom: 2em;
+  margin-bottom: 1em;
+  padding: 1em;
+  border-width: 0px;
+  border-style: solid;
+  border-color: darkgray;
+  border-radius: 5px;
   background: gainsboro;
   background-image: url("img/gracia_vektor_sedivy.svg");
   background-repeat: no-repeat;
   background-position: -10% -10%;
-  margin-bottom: 2em;
-  overflow: hidden;
-  margin-bottom: 1em;
-  border-style: solid;
-  border-width: 0px;
-  border-color: darkgray;
-  border-radius: 5px;
   box-shadow: 2px 2px 8px darkgray; }
   @media screen and (max-width: 780px) {
     .osobni_foto_prave {
       position: static;
-      margin: 0px 0px 1em 0px; } }
+      margin: 0 0 1em; } }
   .osobni_foto_prave img {
+    float: right;
     width: 25%;
-    border-color: darkgray;
+    margin-left: 2em;
     border-width: 2px;
     border-style: groove;
-    margin-left: 2em;
-    float: right; }
+    border-color: darkgray; }
     @media screen and (max-width: 780px) {
       .osobni_foto_prave img {
+        margin-bottom: 1em;
         *zoom: 1;
         float: left;
         clear: none;
         text-align: inherit;
         width: 100%;
         margin-left: 0%;
-        margin-right: 3%;
-        margin-bottom: 1em; }
+        margin-right: 3%; }
         .osobni_foto_prave img:before, .osobni_foto_prave img:after {
           content: '';
           display: table; }
@@ -911,11 +895,11 @@ footer {
           margin-right: 0%; } }
   .osobni_foto_prave p {
     display: block;
-    margin-top: 0px;
-    margin-right: 2em;
     -moz-box-sizing: initial;
     box-sizing: initial;
     height: 100%;
+    margin-top: 0;
+    margin-right: 2em;
     color: black; }
     @media screen and (max-width: 780px) {
       .osobni_foto_prave p {
@@ -937,43 +921,44 @@ footer {
 /*--------------- KOSMETIKA --------------------------*/
 .kosm_foto_leve {
   position: relative;
-  padding: 1em;
-  clear: both;
-  text-align: justify;
   display: block;
-  background: gainsboro;
+  clear: both;
   overflow: hidden;
   margin-bottom: 1em;
+  padding: 1em;
+  text-align: justify;
+  border-width: 0px;
   /*overflow: hidden;*/
   border-style: solid;
-  border-width: 0px;
   border-color: darkgray;
   border-radius: 5px;
+  background: gainsboro;
   box-shadow: 2px 2px 8px darkgray; }
   @media screen and (max-width: 780px) {
     .kosm_foto_leve {
       position: static;
-      margin: 0px 0px 1em 0px; } }
+      margin: 0 0 1em; } }
   .kosm_foto_leve img {
-    /* @include col(1/3, $gutter: 0);*/
-    height: 200px;
     overflow: hidden;
-    border-color: white;
-    border-width: 2px;
-    border-style: groove;
+    /* @include col(1/3, $gutter: 0);*/
+    width: 350px;
+    height: auto;
     margin-right: 2em;
     margin-bottom: 2em;
+    border-width: 2px;
+    border-style: groove;
+    border-color: white;
     /*float: left;*/ }
     @media screen and (max-width: 780px) {
       .kosm_foto_leve img {
+        margin-bottom: 1em;
         *zoom: 1;
         float: left;
         clear: none;
         text-align: inherit;
         width: 100%;
         margin-left: 0%;
-        margin-right: 3%;
-        margin-bottom: 1em; }
+        margin-right: 3%; }
         .kosm_foto_leve img:before, .kosm_foto_leve img:after {
           content: '';
           display: table; }
@@ -1005,38 +990,38 @@ footer {
 
 .mezo_foto_leve {
   position: relative;
-  padding: 1em;
-  clear: both;
-  text-align: justify;
   display: block;
-  background: gainsboro;
+  clear: both;
   overflow: hidden;
   min-height: 250px;
   margin-bottom: 1em;
+  padding: 1em;
+  text-align: justify;
+  border-width: 0px;
   /*overflow: hidden;*/
   border-style: solid;
-  border-width: 0px;
   border-color: darkgray;
   border-radius: 5px;
+  background: gainsboro;
   box-shadow: 2px 2px 8px darkgray; }
   @media screen and (max-width: 780px) {
     .mezo_foto_leve {
       position: static;
-      margin: 0px 0px 1em 0px; } }
+      margin: 0 0 1em; } }
   .mezo_foto_leve img {
+    float: left;
+    width: 20%;
+    margin-right: 2em;
+    border-width: 2px;
+    border-style: groove;
+    border-color: white;
     *zoom: 1;
     float: left;
     clear: none;
     text-align: inherit;
     width: 33.33333%;
     margin-left: 0%;
-    margin-right: 0%;
-    width: 20%;
-    border-color: white;
-    border-width: 2px;
-    border-style: groove;
-    margin-right: 2em;
-    float: left; }
+    margin-right: 0%; }
     .mezo_foto_leve img:before, .mezo_foto_leve img:after {
       content: '';
       display: table; }
@@ -1046,14 +1031,14 @@ footer {
       margin-right: 0%; }
     @media screen and (max-width: 780px) {
       .mezo_foto_leve img {
+        margin-bottom: 1em;
         *zoom: 1;
         float: left;
         clear: none;
         text-align: inherit;
         width: 100%;
         margin-left: 0%;
-        margin-right: 3%;
-        margin-bottom: 1em; }
+        margin-right: 3%; }
         .mezo_foto_leve img:before, .mezo_foto_leve img:after {
           content: '';
           display: table; }
@@ -1062,16 +1047,16 @@ footer {
         .mezo_foto_leve img:last-child {
           margin-right: 0%; } }
   .mezo_foto_leve p {
+    display: block;
+    margin: 0;
+    color: black;
     *zoom: 1;
     float: left;
     clear: none;
     text-align: inherit;
     width: 66.66667%;
     margin-left: 0%;
-    margin-right: 0%;
-    display: block;
-    margin: 0;
-    color: black; }
+    margin-right: 0%; }
     .mezo_foto_leve p:before, .mezo_foto_leve p:after {
       content: '';
       display: table; }
@@ -1098,35 +1083,35 @@ footer {
 
 /*--------------------KONEC KOSMETIKY----------------------*/
 .telefon_c {
+  white-space: nowrap;
+  color: #5b0507;
   font-family: "Raleway", sans-serif;
   font-size: 1.5em;
-  font-weight: bold;
-  color: orangered;
-  white-space: nowrap; }
+  font-weight: bold; }
 
 .objednavka_kad_prava {
-  display: block;
-  margin-top: 1.5em;
   bottom: 1em;
   left: 1em;
+  display: block;
+  float: left;
+  width: 60%;
+  margin-top: 1.5em;
+  text-align: left;
   color: black;
   border-top-width: 1px;
   border-top-style: solid;
-  border-top-color: black;
-  text-align: left;
-  float: left;
-  width: 60%; }
+  border-top-color: black; }
   @media screen and (max-width: 780px) {
     .objednavka_kad_prava {
+      position: static;
+      margin-top: 1em;
       *zoom: 1;
       float: left;
       clear: none;
       text-align: inherit;
       width: 100%;
       margin-left: 0%;
-      margin-right: 3%;
-      margin-top: 1em;
-      position: static; }
+      margin-right: 3%; }
       .objednavka_kad_prava:before, .objednavka_kad_prava:after {
         content: '';
         display: table; }
@@ -1136,30 +1121,30 @@ footer {
         margin-right: 0%; } }
 
 .objednavka_kad_leva {
+  right: 1em;
+  bottom: 1em;
   display: block;
+  float: right;
+  width: 60%;
   margin-top: 1.5em;
   margin-right: 2em;
-  bottom: 1em;
-  right: 1em;
+  text-align: right;
   color: black;
   border-top-width: 1px;
   border-top-style: solid;
-  border-top-color: black;
-  text-align: right;
-  float: right;
-  width: 60%; }
+  border-top-color: black; }
   @media screen and (max-width: 780px) {
     .objednavka_kad_leva {
+      position: static;
+      width: 100%;
+      margin-top: 1em;
       *zoom: 1;
       float: left;
       clear: none;
       text-align: inherit;
       width: 100%;
       margin-left: 0%;
-      margin-right: 3%;
-      margin-top: 1em;
-      position: static;
-      width: 100%; }
+      margin-right: 3%; }
       .objednavka_kad_leva:before, .objednavka_kad_leva:after {
         content: '';
         display: table; }
@@ -1169,33 +1154,33 @@ footer {
         margin-right: 0%; } }
 
 .dlazdice-blok {
-  clear: both;
-  display: block; }
+  display: block;
+  clear: both; }
   @media screen and (max-width: 780px) {
     .dlazdice-blok {
       /* @include column(1/1);*/
       /*margin: 0.5em;*/ } }
 
 .dlazdice {
+  position: relative;
   clear: both;
+  height: 250px;
+  margin-bottom: 1em;
+  border-width: 0.5px;
+  border-style: solid;
+  border-radius: 5px;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: center;
+  background-size: cover;
   *zoom: 1;
   float: left;
   clear: none;
   text-align: inherit;
   width: 32.33333%;
   margin-left: 0%;
-  margin-right: 1.5%;
-  position: relative;
-  background-color: transparent;
-  background-position-x: center;
-  background-position-y: center;
-  background-size: cover;
-  height: 250px;
-  background-repeat: no-repeat;
-  border-width: 0.5px;
-  border-style: solid;
-  border-radius: 5px;
-  margin-bottom: 1em; }
+  margin-right: 1.5%; }
   .dlazdice:before, .dlazdice:after {
     content: '';
     display: table; }
@@ -1230,17 +1215,17 @@ footer {
 .dlazdice-text {
   position: absolute;
   bottom: 0.7em;
-  left: 0px;
+  left: 0;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.5);
   padding: 3px;
+  background-color: rgba(255, 255, 255, 0.5);
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2); }
   .dlazdice-text h3 {
-    font-size: 1.5em;
-    margin: 0px;
+    margin: 0;
     padding: 0.5em;
+    text-transform: uppercase;
     color: black;
-    text-transform: uppercase; }
+    font-size: 1.5em; }
   @media screen and (max-width: 780px) {
     .dlazdice-text {
       /*@include column(1/1);*/
@@ -1249,26 +1234,24 @@ footer {
 .hlavicka-text {
   display: inline;
   float: left;
-  margin: 2em;
-  margin-top: 5em;
-  margin-right: -20px; }
+  margin: 5em -20px 2em 2em; }
 
 .nazev_webu {
-  font-family: "Cormorant Garamond", serif;
   text-transform: uppercase;
+  font-family: "Cormorant Garamond", serif;
   font-size: 4em; }
 
 .podnazev_webu {
-  clear: both;
   display: block;
+  clear: both;
+  margin-top: -0.5em;
   font-family: "Cormorant Garamond", serif;
-  font-size: 2em;
-  margin-top: -0.5em; }
+  font-size: 2em; }
 
 .logo {
   display: inline;
   float: left;
-  margin-left: 0px; }
+  margin-left: 0; }
   @media screen and (max-width: 780px) {
     .logo {
       *zoom: 1;
@@ -1291,35 +1274,38 @@ footer {
 
 .search-boxik {
   position: absolute;
+  right: 0;
   margin-top: 8em;
-  right: 0px;
+  /*        border-top-style: solid;
+        border-top-color: $telefon-color;
+        border-top-width: 0.5px;*/
   padding: 1em;
-  background-color: #240000;
-  border-radius: 5px; }
+  border-radius: 5px;
+  background-color: #240000; }
   @media screen and (max-width: 780px) {
     .search-boxik {
       /*@include column(1/1);*/
       position: static;
-      background-color: transparent;
-      margin: 0 auto; } }
+      margin: 0 auto;
+      background-color: transparent; } }
 
 .search-input {
-  background-color: gainsboro;
-  color: black; }
+  color: black;
+  background-color: gainsboro; }
 
 .search-submit {
-  background-color: #240000;
-  border: none; }
+  border: none;
+  background-color: #240000; }
 
 .menu {
   padding: 2em;
-  text-decoration: none;
   list-style-type: none;
+  text-decoration: none;
   color: yellow; }
   .menu a {
+    text-transform: uppercase;
     font-family: "Cormorant Garamond", serif;
-    font-size: 1.5em;
-    text-transform: uppercase; }
+    font-size: 1.5em; }
   .menu .menu-item {
     margin-bottom: 1em; }
   @media screen and (max-width: 780px) {
@@ -1327,24 +1313,24 @@ footer {
       display: none; } }
 
 .sub-menu {
-  text-decoration: none;
+  padding-left: 1em;
   list-style-type: none;
-  color: yellow;
-  padding-left: 1em; }
+  text-decoration: none;
+  color: yellow; }
   .sub-menu a {
+    text-transform: none;
     font-family: "Raleway", sans-serif;
-    font-size: 1em;
-    text-transform: none; }
+    font-size: 1em; }
   .sub-menu .menu-item {
     margin-bottom: 0.5em;
-    border-top-style: solid;
-    border-top-color: orangered;
-    border-top-width: 0.3px;
-    /*border-top-left-radius: $border-radius;*/
-    background-color: #240000;
     padding-top: 0.5em;
     padding-bottom: 0.5em;
-    padding-left: 1em; }
+    padding-left: 1em;
+    border-top-width: 0.3px;
+    border-top-style: solid;
+    border-top-color: #5b0507;
+    /*border-top-left-radius: $border-radius;*/
+    background-color: #240000; }
 
 /*HEADROOM*/
 .headroom {
@@ -1361,17 +1347,17 @@ footer {
 
 /*---------------TABULKY----------------------*/
 .tablepress {
-  box-shadow: 2px 2px 8px darkgray;
+  clear: both;
+  max-width: 80%;
+  margin: 2em auto 0;
   border-width: 1px;
   border-style: solid;
   border-color: darkgray;
-  max-width: 80%;
-  margin: 0 auto;
-  margin-top: 2em;
-  border-radius: 5px !important; }
+  border-radius: 5px !important;
+  box-shadow: 2px 2px 8px darkgray; }
   .tablepress tbody td {
-    padding-left: 2em;
     padding-right: 2em;
+    padding-left: 2em;
     text-align: left;
     vertical-align: middle; }
   .tablepress td {
@@ -1379,42 +1365,62 @@ footer {
   .tablepress h1 {
     color: white; }
   .tablepress .row-1 {
-    background-color: #420001;
-    color: white; }
+    color: white;
+    background-color: #420001; }
   .tablepress .column-2 {
     width: 20%;
     text-align: right;
-    background-color: gainsboro;
+    vertical-align: middle;
     color: black;
-    font-size: 1.2em;
-    vertical-align: middle; }
+    background-color: gainsboro;
+    font-size: 1.2em; }
   @media screen and (max-width: 780px) {
     .tablepress {
       max-width: 100%; } }
 
 /*----------------------- ČLÁNKY IN ----------------------------*/
 .img-in {
-  box-shadow: 2px 2px 8px darkgray;
+  margin-top: 2em;
+  margin-bottom: 2em;
   border-style: solid;
   border-color: #240000;
   border-radius: 5px;
+  box-shadow: 2px 2px 8px darkgray; }
+  @media screen and (max-width: 780px) {
+    .img-in {
+      display: block;
+      width: 100%;
+      height: auto;
+      padding: 0.5em; } }
+
+.rohy {
+  display: inline-block;
   margin-top: 2em;
-  margin-bottom: 2em; }
+  margin-bottom: 2em;
+  border-style: solid;
+  border-color: #240000;
+  border-radius: 5px;
+  box-shadow: 2px 2px 8px darkgray; }
+  @media screen and (max-width: 780px) {
+    .rohy {
+      display: block;
+      width: 100%;
+      height: auto;
+      padding: 0.5em; } }
 
 .zarazka {
-  clear: both;
   display: block;
+  clear: both;
   width: 1.5em; }
 
 .breadcrumbs {
-  clear: both;
   display: block;
-  padding: 0.5em;
-  padding-left: 30%;
+  clear: both;
   margin-top: 1.5em;
   margin-bottom: 1em;
+  padding: 0.5em 0.5em 0.5em 30%;
   background-color: #240000; }
   @media screen and (max-width: 780px) {
     .breadcrumbs {
-      padding-left: 1em;
-      float: none; } }
+      float: none;
+      padding-left: 1em; } }

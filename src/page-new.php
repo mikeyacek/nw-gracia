@@ -1,4 +1,4 @@
-<?php /* Template Name: Šablona kosmetika-ped man */ ?>
+<?php /* Template Name: Nový produkt */ ?>
 
 <?php get_header(); ?>
 

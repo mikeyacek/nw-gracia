@@ -13,7 +13,7 @@
 	<link href="<?php echo get_template_directory_uri(); ?>/img/icons/favicon.ico" rel="shortcut icon">
 	<link href="<?php echo get_template_directory_uri(); ?>/img/icons/touch.png" rel="apple-touch-icon-precomposed">
 	<link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?>" href="<?php bloginfo('rss2_url'); ?>"
-					
+
 
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,7 +29,7 @@
         });
         </script>
 
-		
+
 
 </head>
 
@@ -53,10 +53,10 @@
 			<!-- Nazev stranky -->
 			<div class="hlavicka-text">
 				<div class="nazev_webu">
-					<?php the_field('nazev_webu_1', 'option'); ?>
+					<a href="<?php echo home_url(); ?>"><?php the_field('nazev_webu_1', 'option'); ?></a>
 				</div>
 				<div class="podnazev_webu">
-					<?php the_field('podnazev_webu_1', 'option'); ?>
+					<a href="<?php echo home_url(); ?>"><?php the_field('podnazev_webu_1', 'option'); ?></a>
 				</div>
 			</div>
 
@@ -75,7 +75,7 @@
 			<!-- / Search box -->
 <?php if (is_front_page()): ?>
 			<?php
-	
+
 		$image01 = get_field( 'dlazdice_img_1', 'option' );
 		$image02 = get_field( 'dlazdice_img_2', 'option' );
 		$image03 = get_field( 'dlazdice_img_3', 'option' );
@@ -85,11 +85,11 @@
 		$image07 = get_field( 'dlazdice_img_7', 'option' );
 		$image08 = get_field( 'dlazdice_img_8', 'option' );
 		$image09 = get_field( 'dlazdice_img_9', 'option' );
-	
+
 ?>
 				<div class="dlazdice-blok"> <!--ROZDELENI BLOKU-->
 
-					<a href="<?php echo get_site_url(); ?>/?page_id=88" class="dlazdice" style="background-image:url('<?php echo $image01['url']; ?>');">
+					<a href="<?php the_field('dlazdice_1_link', 'option'); ?>" class="dlazdice" style="background-image:url('<?php echo $image01['url']; ?>');">
 
 						<div class="dlazdice-text">
 							<h3>
@@ -98,7 +98,7 @@
 						</div>
 
 					</a>
-					<a href="<?php echo get_site_url(); ?>/?page_id=187" class="dlazdice" style="background-image:url('<?php echo $image02['url']; ?>');">
+					<a href="<?php the_field('dlazdice_2_link', 'option'); ?>" class="dlazdice" style="background-image:url('<?php echo $image02['url']; ?>');">
 
 						<div class="dlazdice-text">
 							<h3>
@@ -107,7 +107,7 @@
 						</div>
 
 					</a>
-					<a href="<?php echo get_site_url(); ?>/?page_id=511" class="dlazdice" style="background-image:url('<?php echo $image03['url']; ?>');">
+					<a href="<?php the_field('dlazdice_3_link', 'option'); ?>" class="dlazdice" style="background-image:url('<?php echo $image03['url']; ?>');">
 
 						<div class="dlazdice-text">
 							<h3>
@@ -116,7 +116,7 @@
 						</div>
 
 					</a>
-					<a href="<?php echo get_site_url(); ?>/?page_id=508" class="dlazdice" style="background-image:url('<?php echo $image04['url']; ?>');">
+					<a href="<?php the_field('dlazdice_4_link', 'option'); ?>" class="dlazdice" style="background-image:url('<?php echo $image04['url']; ?>');">
 
 						<div class="dlazdice-text">
 							<h3>
@@ -125,7 +125,7 @@
 						</div>
 
 					</a>
-					<a href="<?php echo get_site_url(); ?>/?page_id=524" class="dlazdice" style="background-image:url('<?php echo $image05['url']; ?>');">
+					<a href="<?php the_field('dlazdice_5_link', 'option'); ?>" class="dlazdice" style="background-image:url('<?php echo $image05['url']; ?>');">
 
 						<div class="dlazdice-text">
 							<h3>
@@ -134,7 +134,7 @@
 						</div>
 
 					</a>
-					<a href="<?php echo get_site_url(); ?>/?page_id=514" class="dlazdice" style="background-image:url('<?php echo $image06['url']; ?>');">
+					<a href="<?php the_field('dlazdice_6_link', 'option'); ?>" class="dlazdice" style="background-image:url('<?php echo $image06['url']; ?>');">
 
 						<div class="dlazdice-text">
 							<h3>
@@ -143,7 +143,7 @@
 						</div>
 
 					</a>
-					<a href="<?php echo get_site_url(); ?>/?page_id=643" class="dlazdice" style="background-image:url('<?php echo $image07['url']; ?>');">
+					<a href="<?php the_field('dlazdice_7_link', 'option'); ?>" class="dlazdice" style="background-image:url('<?php echo $image07['url']; ?>');">
 
 						<div class="dlazdice-text">
 							<h3>
@@ -152,7 +152,7 @@
 						</div>
 
 					</a>
-					<a href="<?php echo get_site_url(); ?>/?page_id=388" class="dlazdice" style="background-image:url('<?php echo $image08['url']; ?>');">
+					<a href="<?php the_field('dlazdice_8_link', 'option'); ?>" class="dlazdice" style="background-image:url('<?php echo $image08['url']; ?>');">
 
 						<div class="dlazdice-text">
 							<h3>
@@ -161,7 +161,7 @@
 						</div>
 
 					</a>
-					<a href="<?php echo get_site_url(); ?>/?page_id=444" class="dlazdice" style="background-image:url('<?php echo $image09['url']; ?>');">
+					<a href="<?php the_field('dlazdice_9_link', 'option'); ?>" class="dlazdice" style="background-image:url('<?php echo $image09['url']; ?>');">
 
 						<div class="dlazdice-text">
 							<h3>
@@ -176,7 +176,7 @@
 				</div>
 				<?php endif; ?>
 				<div class="zarazka"></div>
-				
+
 				<!-- oddělovač -->
 				<!-- <hr class="hr-style"> -->
 				<!-- /oddělovač -->

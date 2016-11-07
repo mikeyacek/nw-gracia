@@ -1,734 +1,913 @@
-    /**
+/**
  * styles.scss
  * ---
  * Main `sass` file. Import here `sass` files
  */
-    
-    // Modules
-    @import "modules/variables";
-    @import "modules/mixins";
-    @import "modules/fonts";
-    // Partials
-    @import "partials/reset";
-    @import "partials/wordpress";
-    @import "partials/utils";
-    @import "partials/wrapper";
-    @import "partials/header";
-    @import "partials/nav";
-    @import "partials/sidebar";
-    @import "partials/footer";
-    @import "partials/print";
-    // @import "nw-gracia";
-    @import "jeet/index";
-    body {
-        /*@include center(960px);*/
+
+// Modules
+@import "modules/variables";
+@import "modules/mixins";
+@import "modules/fonts";
+// Partials
+@import "partials/reset";
+@import "partials/wordpress";
+@import "partials/utils";
+@import "partials/wrapper";
+@import "partials/header";
+@import "partials/nav";
+@import "partials/sidebar";
+@import "partials/footer";
+@import "partials/print";
+// @import "nw-gracia";
+@import "jeet/index";
+body {
+  /*@include center(960px);*/
+  background: rgba(36, 0, 0, 1);
+  background: -moz-linear-gradient(left, rgba(36, 0, 0, 1) 19%, rgba(36, 0, 0, 1) 23%, rgba(66, 0, 1, 1) 46%, rgba(66, 0, 1, 1) 61%);
+  background: -webkit-gradient(left top, right top, color-stop(19%, rgba(36, 0, 0, 1)), color-stop(23%, rgba(36, 0, 0, 1)), color-stop(46%, rgba(66, 0, 1, 1)), color-stop(61%, rgba(66, 0, 1, 1)));
+  background: -webkit-linear-gradient(left, rgba(36, 0, 0, 1) 19%, rgba(36, 0, 0, 1) 23%, rgba(66, 0, 1, 1) 46%, rgba(66, 0, 1, 1) 61%);
+  background: -o-linear-gradient(left, rgba(36, 0, 0, 1) 19%, rgba(36, 0, 0, 1) 23%, rgba(66, 0, 1, 1) 46%, rgba(66, 0, 1, 1) 61%);
+  background: -ms-linear-gradient(left, rgba(36, 0, 0, 1) 19%, rgba(36, 0, 0, 1) 23%, rgba(66, 0, 1, 1) 46%, rgba(66, 0, 1, 1) 61%);
+  background: linear-gradient(to right, rgba(36, 0, 0, 1) 19%, rgba(36, 0, 0, 1) 23%, rgba(66, 0, 1, 1) 46%, rgba(66, 0, 1, 1) 61%);
+
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#240000', endColorstr='#420001', GradientType=1);
+}
+
+p {
+  text-align: $zarovnani;
+  // margin-bottom: $box-margin;
+  letter-spacing: 0.75px;
+  @media screen and (max-width: $mob-break) {
+    text-align: left;
+  }
+}
+
+li {
+  text-align: justify;
+  @media screen and (max-width: $mob-break) {
+    text-align: left;
+    // text-align: left;
+  }
+}
+
+.header {
+  position: relative;
+}
+
+.nelomit {
+  white-space: nowrap;
+}
+
+aside {
+  float: left;
+
+  width: 25%;
+  // margin-right: -100%;
+  margin-top: 2em;
+
+  background-color: transparent;
+  // @include col(1/4, $gutter: 0);
+  @media screen and (max-width: $mob-break) {
+    float: right;
+
+    @include column(1/1);
+  }
+}
+
+main {
+  float: right;
+
+  width: 75%;
+  padding: 2em 0 2em 2em;
+  // @include col(3/4, $offset: 1/4, $gutter: 0);
+  @media screen and (max-width: $mob-break) {
+    float: none;
+
+    padding: 0.5em;
+
+    @include column(1/1);
+  }
+}
+
+.wp-caption {
+  display: inline-block;
+
+  background-color: transparent;
+  .wp-caption-text {
+    padding-top: 0.5em;
+
+    text-align: center;
+
+    font-family: $font-family-base;
+    font-size: 1em;
+  }
+}
+
+
+/****************************** PLATNO **************************************/
+
+.platno {
+  overflow: hidden;
+
+  min-height: 100px;
+  padding: 3em;
+
+  color: $text-content-color;
+  border-radius: $border-radius;
+  background-color: $svetle-pozadi;
+  h1 {
+    text-transform: uppercase;
+
+    color: $text-content-color;
+
+    font-family: $font-family-header;
+    font-size: 2em;
+  }
+  a {
+    @include links($text-content-color, $text-content-color, $telefon-color, $tmavsi-pozadi);
+  }
+  .sloupecky {
+    clear: both;
+    overflow: hidden;
+
+    margin-bottom: 1em;
+  }
+  .vyhody {
+    float: left;
+
+    height: 100%;
+    margin-top: 1em;
+    margin-bottom: -9997em;
+    padding: 1.5em 1.5em 9999em;
+
+    color: $text-color;
+    border-radius: $border-radius;
+    background-color: $tmavsi-pozadi;
+    box-shadow: $box-shadow;
+
+    @include column(1/2, $gutter: 2, $cycle: 2);
+    ul {
+      padding-left: 1em;
     }
-    
+    li {
+      list-style-type: $list-style-type;
+    }
+    @media screen and (max-width: $mob-break) {
+      width: 100%;
+
+      @include column(1/1, $gutter: 0, $cycle: 1);
+    }
+  }
+  .nutno_dodrzet {
+    float: left;
+
+    height: 100%;
+    margin-top: 1em;
+    margin-bottom: -9997em;
+    padding: 1.5em 1.5em 9999em;
+
+    color: $text-color;
+    border-radius: $border-radius;
+    background-color: $body-bg;
+    box-shadow: $box-shadow;
+
+    @include column(1/2, $gutter: 2, $cycle: 2);
     p {
-        text-align: $zarovnani;
-        // margin-bottom: $box-margin;
-        letter-spacing: 0.75px;
-        @media screen and (max-width: $mob-break) {
-            // text-align: left;
-        }
-    }
-    
-    .header {
-        position: relative;
-    }
-    
-    .nelomit {
-        white-space: nowrap;
-    }
-    
-    aside {
+      text-align: left;
+       ::first-child {
+        clear: both;
+
         margin-top: 2em;
-        @include col(1/4, $gutter: 0);
-        float: left;
-        background-color: transparent;
-        @media screen and (max-width: $mob-break) {
-            @include column(1/1);
-            float: right;
-        }
-    }
-    
-    main {
-        padding: 2em;
-        
-        padding-right: 0px;
-        @include col(3/4, $gutter: 0);
-        float: right;
-        @media screen and (max-width: $mob-break) {
-            @include column(1/1);
-            float: none;
-            padding: 0.5em;
-            padding-right: 0.5em;
-        }
-    }
-    
-    .wp-caption {
-        background-color: transparent;
-        .wp-caption-text {
-            font-family: $font-family-base;
-            font-size: 1em;
-            text-align: center;
-            padding: 0.5em;
-        }
-    }
-    /****************************** PLATNO **************************************/
-    
-    .platno {
-        background-color: $svetle-pozadi;
-        border-radius: $border-radius;
-        color: $text-content-color;
-        padding: 3em;
-        min-height: 100px;
-        overflow: hidden;
-        h1 {
-            font-family: $font-family-header;
-            font-size: 2em;
-            text-transform: uppercase;
-            color: $text-content-color;
-        }
-        a {
-            @include links($text-content-color, $text-content-color, $telefon-color, $tmavsi-pozadi);
-        }
-        .sloupecky {
-            clear: both;
-            overflow: hidden;
-            margin-bottom: 1em;
-        }
-        .vyhody {
-            @include column(1/2, $gutter: 2, $cycle: 2);
-            padding: 1.5em;
-            margin-top: 1em;
-            margin-bottom: -9997em;
-            padding-bottom: 9999em;
-            float: left;
-            background-color: $tmavsi-pozadi;
-            color: $text-color;
-            height: 100%;
-            box-shadow: $box-shadow;
-            border-radius: $border-radius;
-            ul {
-                padding-left: 1em;
-            }
-            li {
-                list-style-type: $list-style-type;
-            }
-            @media screen and (max-width: $mob-break) {
-                @include column(1/1, $gutter: 0, $cycle: 1);
-                width: 100%;
-            }
-        }
-        .nutno_dodrzet {
-            @include column(1/2, $gutter: 2, $cycle: 2);
-            padding: 1.5em;
-            margin-top: 1em;
-            margin-bottom: -9997em;
-            padding-bottom: 9999em;
-            float: left;
-            background-color: $body-bg;
-            color: $text-color;
-            height: 100%;
-            box-shadow: $box-shadow;
-            border-radius: $border-radius;
-            p {
-                text-align: left;
-                 ::first-child {
-                    clear: both;
-                    margin-top: 2em;
-                }
-                 ::last-child {
-                    margin-bottom: 2em;
-                }
-            }
-            ul {
-                padding-left: 1em;
-            }
-            li {
-                list-style-type: $list-style-type;
-            }
-            @media screen and (max-width: $mob-break) {
-                @include column(1/1, $gutter: 0, $cycle: 1);
-                width: 100%;
-            }
-        }
-        .upozorneni {
-            clear: both;
-            @include column(1/1);
-            padding: 1em;
-            margin-top: 2em;
-            margin-bottom: 2em;
-            background-color: lightsalmon;
-            box-shadow: $box-shadow;
-            border-radius: $border-radius;
-            img {
-                @include col(1/4, $gutter: 0);
-                width: 17%;
-                border-color: white;
-                // display: inline;
-                border-width: 2px;
-                border-style: none;
-                margin-right: 2em;
-                drop-shadow: $box-shadow;
-                float: left;
-                @media screen and (max-width: $mob-break) {
-                    @include column(1/1);
-                    margin-bottom: 1em;
-                }
-            }
-            p {
-                @include col(3/4, $gutter: 0);
-                display: block;
-                margin: 0;
-                margin-top: 2em;
-                color: $box-text-color;
-                @media screen and (max-width: $mob-break) {
-                    @include column(1/1);
-                }
-            }
-        }
-        .nejcastejsi_dotazy {
-            clear: both;
-            margin-top: 3em;
-            margin-bottom: 3em;
-        }
-        @media screen and (max-width: $mob-break) {
-            padding: 0.5em;
-        }
-    }
-    
-    footer {
-        clear: both;
-        padding: 2em;
-        text-align: center;
-        @media screen and (max-width: $mob-break) {
-            @include column(1/1);
-        }
-    }
-    
-    .hr-style {
-        @include col(1/1);
-        clear: both;
-        border: 0;
-        height: 1px;
-        background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
-        margin: 10px;
-    }
-    
-    .text_kadernictvi_blok {
-        // margin: $box-margin;
-        margin-top: 3em;
-        margin-bottom: 3em;
-        @media screen and (max-width: $mob-break) {
-            
-            
-        }
-    }
-    
-    // FOTOGRAFIE //
-    .fotky_kadernictvi_blok {}
-    
-    .osobni_foto_leve {
-        position: relative;
-        padding: $box-padding;
-        clear: both;
-        // height: auto;
-        text-align: $zarovnani;
-        display: block;
-        background: $box-color;
-        min-height: 100px;
-        overflow: hidden;
-        margin-bottom: 1em;
-        /*overflow: hidden;*/
-        border-style: $border-style;
-        border-width: $border-width;
-        border-color: $border-color;
-        border-radius: $border-radius;
-        box-shadow: $box-shadow;
-        @media screen and (max-width: $mob-break) {
-            position: static;
-            margin: 0px 0px 1em 0px;
-        }
-        img {
-            // @include col(1/3, $gutter: 0);
-            width: $box-picture-size;
-            border-color: white;
-            // display: inline;
-            border-width: 2px;
-            border-style: groove;
-            margin-right: 2em;
-            float: left;
-            @media screen and (max-width: $mob-break) {
-                @include column(1/1);
-                margin-bottom: 1em;
-            }
-        }
-        p {
-            // @include col(2/3, $gutter: 0);
-            display: block;
-            margin-top: 0px;
-            margin-right: 2em;
-            box-sizing: initial;
-            height: 100%;
-            // padding: 0 !important;
-            color: $box-text-color;
-            @media screen and (max-width: $mob-break) {
-                @include column(1/1);
-            }
-        }
-    }
-    
-    .osobni_foto_prave {
-        position: relative;
-        padding: $box-padding;
-        clear: both;
-        height: auto;
-        display: block;
-        background: $box-color;
-        background-image: url("img/gracia_vektor_sedivy.svg");
-        background-repeat: no-repeat;
-        background-position: -10% -10%;
+      }
+       ::last-child {
         margin-bottom: 2em;
-        overflow: hidden;
+      }
+    }
+    ul {
+      padding-left: 1em;
+    }
+    li {
+      list-style-type: $list-style-type;
+    }
+    @media screen and (max-width: $mob-break) {
+      width: 100%;
+
+      @include column(1/1, $gutter: 0, $cycle: 1);
+    }
+  }
+  .upozorneni {
+    clear: both;
+
+    margin-top: 2em;
+    margin-bottom: 2em;
+    padding: 1em;
+
+    border-radius: $border-radius;
+    background-color: lightsalmon;
+    box-shadow: $box-shadow;
+
+    @include column(1/1);
+    img {
+      float: left;
+
+      width: 17%;
+      margin-right: 2em;
+      // display: inline;
+
+      border-width: 2px;
+      border-style: none;
+      border-color: white;
+
+      @include col(1/4, $gutter: 0);
+      drop-shadow: $box-shadow;
+      @media screen and (max-width: $mob-break) {
         margin-bottom: 1em;
-        border-style: $border-style;
-        border-width: $border-width;
-        border-color: $border-color;
-        border-radius: $border-radius;
-        box-shadow: $box-shadow;
-        @media screen and (max-width: $mob-break) {
-            position: static;
-            margin: 0px 0px 1em 0px;
-        }
-        img {
-            // @include col(1/3,
-            // $offset: 2/3, $gutter: 0);
-            width: $box-picture-size;
-            border-color: $border-color;
-            // display: inline;
-            border-width: 2px;
-            border-style: groove;
-            margin-left: 2em;
-            float: right;
-            @media screen and (max-width: $mob-break) {
-                @include column(1/1);
-                margin-bottom: 1em;
-            }
-        }
-        p {
-            // @include col(2/3,
-            // $gutter: 0);
-            display: block;
-            margin-top: 0px;
-            margin-right: 2em;
-            box-sizing: initial;
-            height: 100%;
-            color: $box-text-color;
-            @media screen and (max-width: $mob-break) {
-                @include column(1/1);
-            }
-        }
-    }
-    /*--------------- KOSMETIKA --------------------------*/
-    
-    .kosm_foto_leve {
-        position: relative;
-        padding: $box-padding;
-        clear: both;
-        // height: auto;
-        text-align: $zarovnani;
-        display: block;
-        background: $box-color;
-        overflow: hidden;
-        margin-bottom: 1em;
-        /*overflow: hidden;*/
-        border-style: $border-style;
-        border-width: $border-width;
-        border-color: $border-color;
-        border-radius: $border-radius;
-        box-shadow: $box-shadow;
-        @media screen and (max-width: $mob-break) {
-            position: static;
-            margin: 0px 0px 1em 0px;
-        }
-        img {
-            /* @include col(1/3, $gutter: 0);*/
-            height: 200px;
-            overflow: hidden;
-            border-color: white;
-            // display: inline;
-            border-width: 2px;
-            border-style: groove;
-            margin-right: 2em;
-            margin-bottom: 2em;
-            /*float: left;*/
-            @media screen and (max-width: $mob-break) {
-                @include column(1/1);
-                margin-bottom: 1em;
-            }
-        }
-        p {
-            /* @include col(2/3, $gutter: 0);*/
-            display: block;
-            margin: 0;
-            color: $box-text-color;
-            @media screen and (max-width: $mob-break) {
-                @include column(1/1);
-            }
-        }
-    }
-    
-    .mezo_foto_leve {
-        position: relative;
-        padding: $box-padding;
-        clear: both;
-        // height: auto;
-        text-align: $zarovnani;
-        display: block;
-        background: $box-color;
-        overflow: hidden;
-        min-height: 250px;
-        margin-bottom: 1em;
-        /*overflow: hidden;*/
-        border-style: $border-style;
-        border-width: $border-width;
-        border-color: $border-color;
-        border-radius: $border-radius;
-        box-shadow: $box-shadow;
-        @media screen and (max-width: $mob-break) {
-            position: static;
-            margin: 0px 0px 1em 0px;
-        }
-        img {
-            @include col(1/3,
-            $gutter: 0);
-            width: 20%;
-            border-color: white;
-            // display: inline;
-            border-width: 2px;
-            border-style: groove;
-            margin-right: 2em;
-            float: left;
-            @media screen and (max-width: $mob-break) {
-                @include column(1/1);
-                margin-bottom: 1em;
-            }
-        }
-        p {
-            @include col(2/3,
-            $gutter: 0);
-            display: block;
-            margin: 0;
-            color: $box-text-color;
-            // text-align: justify;
-            @media screen and (max-width: $mob-break) {
-                @include column(1/1);
-            }
-        }
-    }
-    /*--------------------KONEC KOSMETIKY----------------------*/
-    
-    .telefon_c {
-        font-family: $font-family-base;
-        font-size: 1.5em;
-        font-weight: bold;
-        color: $telefon-color;
-        white-space: nowrap;
-    }
-    
-    .objednavka_kad_prava {
-        // position: absolute;
-        display: block;
-        margin-top: 1.5em;
-        // margin-left: 1em;
-        bottom: $box-padding;
-        left: $box-padding;
-        color: $box-text-color;
-        border-top-width: 1px;
-        border-top-style: solid;
-        border-top-color: $box-text-color;
-        text-align: left;
-        float: left;
-        width: 60%;
-        @media screen and (max-width: $mob-break) {
-            @include column(1/1);
-            margin-top: 1em;
-            position: static;
-        }
-    }
-    
-    .objednavka_kad_leva {
-        // position: absolute;
-        display: block;
-        margin-top: 1.5em;
-        margin-right: 2em;
-        bottom: $box-padding;
-        right: $box-padding;
-        color: $box-text-color;
-        border-top-width: 1px;
-        border-top-style: solid;
-        border-top-color: $box-text-color;
-        text-align: right;
-        float: right;
-        width: 60%;
-        @media screen and (max-width: $mob-break) {
-            @include column(1/1);
-            margin-top: 1em;
-            position: static;
-            width: 100%;
-        }
-    }
-    
-    // DLAZDICE ///////
-    .dlazdice-blok {
-        clear: both;
-        display: block;
-        @media screen and (max-width: $mob-break) {
-            /* @include column(1/1);*/
-            /*margin: 0.5em;*/
-        }
-    }
-    
-    .dlazdice {
-        clear: both;
-        @include col(1/3,
-        $cycle: 3, $gutter: 1.5);
-        position: relative;
-        // background-image: url("img/SGKadernictvi.jpg");
-        background-color: transparent;
-        background-position-x: center;
-        background-position-y: center;
-        background-size: cover;
-        height: $vyska-dlazdice;
-        background-repeat: no-repeat;
-        border-width: 0.5px;
-        border-style: $border-style;
-        border-radius: $border-radius;
-        margin-bottom: 1em;
-        @media screen and (max-width: 680px) {
-            @include column(1/1, $gutter: 0);
-            /*width: 100%;*/
-            /*margin: 0px;*/
-            /*visibility: hidden;*/
-            /*position: static;*/
-        }
-    }
-    
-    .dlazdice-text {
-        position: absolute;
-        bottom: 0.7em;
-        left: 0px;
-        width: 100%;
-        background-color: rgba(255, 255, 255, 0.5);
-        padding: 3px;
-        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
-        h3 {
-            font-size: 1.5em;
-            margin: 0px;
-            padding: 0.5em;
-            color: black;
-            text-transform: uppercase;
-        }
-        @media screen and (max-width: $mob-break) {
-            /*@include column(1/1);*/
-            /*margin: 0px;*/
-        }
-    }
-    
-    // NAZEV WEBU A LOGO
-    .hlavicka-text {
-        display: inline;
-        float: left;
-        margin: $box-margin;
-        margin-top: 5em;
-        margin-right: -20px;
-    }
-    
-    .nazev_webu {
-        font-family: $font-family-header;
-        text-transform: uppercase;
-        font-size: $nazev_webu_size;
-    }
-    
-    .podnazev_webu {
-        clear: both;
-        display: block;
-        font-family: $font-family-header;
-        font-size: $podnazev_webu_size;
-        // display: inline;
-        margin-top: -0.5em;
-    }
-    
-    // Logo
-    .logo {
-        //  @include col(1/4, $offset: 3/4);
-        display: inline;
-        float: left;
-        margin-left: 0px;
-        @media screen and (max-width: $mob-break) {
-            @include column(1/1);
-        }
-    }
-    
-    .logo-img {
-        margin: 2em;
-    }
-    
-    // KONEC FOTOGRAFII //
-    // MENU NAVIGACE
-    .search-boxik {
-        position: absolute;
-        margin-top: $search-top-padding;
-        right: 0px;
 
-        padding: $box-padding;
-        background-color: $tmavsi-pozadi;
-        border-radius: $border-radius;
-        @media screen and (max-width: $mob-break) {
-            /*@include column(1/1);*/
-            position: static;
-            background-color: transparent;
-            margin: 0 auto;
-        }
+        @include column(1/1);
+      }
     }
-    
-    .search-input {
-        background-color: $box-color;
-        color: $text-content-color;
-    }
-    
-    .search-submit {
-        background-color: $tmavsi-pozadi;
-        border: none;
-    }
-    
-    .menu {
-        padding: 2em;
-        text-decoration: none;
-        list-style-type: none;
-        color: yellow;
-        a {
-            font-family: $font-family-header;
-            font-size: 1.5em;
-            text-transform: uppercase;
-        }
-        .menu-item {
-            margin-bottom: 1em;
+    p {
+      display: block;
 
-        }
-        @media screen and (max-width: $mob-break) {
-            display: none;
-        }
+      margin: 2em 0 0;
+
+      color: $box-text-color;
+
+      @include col(3/4, $gutter: 0);
+      @media screen and (max-width: $mob-break) {
+        @include column(1/1);
+      }
     }
-    
-    .sub-menu {
-        text-decoration: none;
-        list-style-type: none;
-        color: yellow;
-        padding-left: 1em;
-        a {
-            font-family: $font-family-base;
-            font-size: 1em;
-            text-transform: none;
-        }
-        .menu-item {
-            margin-bottom: 0.5em;
-            border-top-style: solid;
-            border-top-color: $telefon-color;
-            border-top-width: 0.3px;
-            /*border-top-left-radius: $border-radius;*/
-            background-color: $tmavsi-pozadi;
-            padding-top: 0.5em;
-            padding-bottom: 0.5em;
-            padding-left: 1em;
-        }
+  }
+  .nejcastejsi_dotazy {
+    clear: both;
+
+    margin-top: 3em;
+    margin-bottom: 3em;
+  }
+  @media screen and (max-width: $mob-break) {
+    padding: 0.5em;
+  }
+}
+
+footer {
+  clear: both;
+
+  padding: 2em;
+
+  text-align: center;
+  @media screen and (max-width: $mob-break) {
+    @include column(1/1);
+  }
+}
+
+.hr-style {
+  clear: both;
+
+  height: 1px;
+  margin: 10px;
+
+  border: 0;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+
+  @include col(1/1);
+}
+
+.text_kadernictvi_blok {
+  // margin: $box-margin;
+  margin-top: 3em;
+  margin-bottom: 3em;
+  @media screen and (max-width: $mob-break) {}
+}
+
+// FOTOGRAFIE //
+.fotky_kadernictvi_blok {}
+
+.osobni_foto_leve {
+  position: relative;
+
+  display: block;
+  clear: both;
+  overflow: hidden;
+
+  min-height: 100px;
+  margin-bottom: 1em;
+  padding: $box-padding;
+  // height: auto;
+
+  text-align: $zarovnani;
+
+  border-width: $border-width;
+  /*overflow: hidden;*/
+  border-style: $border-style;
+  border-color: $border-color;
+  border-radius: $border-radius;
+  background: $box-color;
+  box-shadow: $box-shadow;
+  @media screen and (max-width: $mob-break) {
+    position: static;
+
+    margin: 0 0 1em;
+  }
+  img {
+    float: left;
+    // @include col(1/3, $gutter: 0);
+
+    width: $box-picture-size;
+    margin-right: 2em;
+    // display: inline;
+
+    border-width: 2px;
+    border-style: groove;
+    border-color: white;
+    @media screen and (max-width: $mob-break) {
+      margin-bottom: 1em;
+
+      @include column(1/1);
     }
-    /*HEADROOM*/
-    
-    .headroom {
-        transition: transform $rychlost-hlavicky linear;
+  }
+  p {
+    // @include col(2/3, $gutter: 0);
+    display: block;
+
+    box-sizing: initial;
+    height: 100%;
+    margin-top: 0;
+    margin-right: 2em;
+    // padding: 0 !important;
+
+    color: $box-text-color;
+    @media screen and (max-width: $mob-break) {
+      @include column(1/1);
     }
-    
-    .headroom--pinned {
-        transform: translateY(0%);
+  }
+}
+
+.osobni_foto_prave {
+  position: relative;
+
+  display: block;
+  clear: both;
+  overflow: hidden;
+
+  height: auto;
+  margin-bottom: 2em;
+  margin-bottom: 1em;
+  padding: $box-padding;
+
+  border-width: $border-width;
+  border-style: $border-style;
+  border-color: $border-color;
+  border-radius: $border-radius;
+  background: $box-color;
+  background-image: url("img/gracia_vektor_sedivy.svg");
+  background-repeat: no-repeat;
+  background-position: -10% -10%;
+  box-shadow: $box-shadow;
+  @media screen and (max-width: $mob-break) {
+    position: static;
+
+    margin: 0 0 1em;
+  }
+  img {
+    float: right;
+    // @include col(1/3,
+    // $offset: 2/3, $gutter: 0);
+
+    width: $box-picture-size;
+    margin-left: 2em;
+    // display: inline;
+
+    border-width: 2px;
+    border-style: groove;
+    border-color: $border-color;
+    @media screen and (max-width: $mob-break) {
+      margin-bottom: 1em;
+
+      @include column(1/1);
     }
-    
-    .headroom--unpinned {
-        transform: translateY(-100%);
+  }
+  p {
+    // @include col(2/3,
+    // $gutter: 0);
+    display: block;
+
+    box-sizing: initial;
+    height: 100%;
+    margin-top: 0;
+    margin-right: 2em;
+
+    color: $box-text-color;
+    @media screen and (max-width: $mob-break) {
+      @include column(1/1);
     }
-    /*---------------TABULKY----------------------*/
-    
-    .tablepress {
-        box-shadow: $box-shadow;
-        border-width: 1px;
-        border-style: solid;
-        border-color: $border-color;
-        max-width: 80%;
-        margin: 0 auto;
-        margin-top: 2em;
-        border-radius: $border-radius !important;
-        tbody {
-            td {
-                padding-left: 2em;
-                padding-right: 2em;
-                text-align: left;
-                vertical-align: middle;
-            }
-        }
-        td {
-            padding: 0.5em !important;
-        }
-        h1 {
-            color: $text-color;
-        }
-        .row-1 {
-            background-color: $body-bg;
-            color: white;
-        }
-        .column-2 {
-            width: 20%;
-            text-align: right;
-            background-color: $box-color;
-            color: $text-content-color;
-            font-size: 1.2em;
-            vertical-align: middle;
-        }
-        @media screen and (max-width: $mob-break) {
-            max-width: 100%;
-        }
-    }
-    /*----------------------- ČLÁNKY IN ----------------------------*/
-    
-    .img-in {
-        box-shadow: $box-shadow;
-        border-style: solid;
-        border-color: $tmavsi-pozadi;
-        border-radius: $border-radius;
-        margin-top: 2em;
-        margin-bottom: 2em;
-    }
+  }
+}
 
 
-    .zarazka {
-        clear: both;
-        display: block;
-        width: 1.5em;
+/*--------------- KOSMETIKA --------------------------*/
+
+.kosm_foto_leve {
+  position: relative;
+
+  display: block;
+  clear: both;
+  overflow: hidden;
+
+  margin-bottom: 1em;
+  padding: $box-padding;
+  // height: auto;
+
+  text-align: $zarovnani;
+
+  border-width: $border-width;
+  /*overflow: hidden;*/
+  border-style: $border-style;
+  border-color: $border-color;
+  border-radius: $border-radius;
+  background: $box-color;
+  box-shadow: $box-shadow;
+  @media screen and (max-width: $mob-break) {
+    position: static;
+
+    margin: 0 0 1em;
+  }
+  img {
+    overflow: hidden;
+    /* @include col(1/3, $gutter: 0);*/
+
+    width: 350px;
+    height: auto;
+    margin-right: 2em;
+    margin-bottom: 2em;
+    // display: inline;
+
+    border-width: 2px;
+    border-style: groove;
+    border-color: white;
+    /*float: left;*/
+    @media screen and (max-width: $mob-break) {
+      margin-bottom: 1em;
+
+      @include column(1/1);
     }
+  }
+  p {
+    /* @include col(2/3, $gutter: 0);*/
+    display: block;
+
+    margin: 0;
+
+    color: $box-text-color;
+    @media screen and (max-width: $mob-break) {
+      @include column(1/1);
+    }
+  }
+}
+
+.mezo_foto_leve {
+  position: relative;
+
+  display: block;
+  clear: both;
+  overflow: hidden;
+
+  min-height: 250px;
+  margin-bottom: 1em;
+  padding: $box-padding;
+  // height: auto;
+
+  text-align: $zarovnani;
+
+  border-width: $border-width;
+  /*overflow: hidden;*/
+  border-style: $border-style;
+  border-color: $border-color;
+  border-radius: $border-radius;
+  background: $box-color;
+  box-shadow: $box-shadow;
+  @media screen and (max-width: $mob-break) {
+    position: static;
+
+    margin: 0 0 1em;
+  }
+  img {
+    float: left;
+
+    width: 20%;
+    margin-right: 2em;
+    // display: inline;
+
+    border-width: 2px;
+    border-style: groove;
+    border-color: white;
+
+    @include col(1/3,
+    $gutter: 0);
+    @media screen and (max-width: $mob-break) {
+      margin-bottom: 1em;
+
+      @include column(1/1);
+    }
+  }
+  p {
+    display: block;
+
+    margin: 0;
+
+    color: $box-text-color;
+
+    @include col(2/3,
+    $gutter: 0);
+    // text-align: justify;
+    @media screen and (max-width: $mob-break) {
+      @include column(1/1);
+    }
+  }
+}
 
 
-    .breadcrumbs {
-        clear: both;
-        display: block;
-        padding: 0.5em;
-        padding-left: 30%;
-        margin-top: 1.5em;
-        margin-bottom: 1em;
-        background-color: $tmavsi-pozadi;
-        
-                @media screen and (max-width: $mob-break) {
-            padding-left: 1em;
-            float: none;
-        }
+/*--------------------KONEC KOSMETIKY----------------------*/
+
+.telefon_c {
+  white-space: nowrap;
+
+  color: $telefon-color;
+
+  font-family: $font-family-base;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.objednavka_kad_prava {
+  // margin-left: 1em;
+  bottom: $box-padding;
+  left: $box-padding;
+  // position: absolute;
+
+  display: block;
+  float: left;
+
+  width: 60%;
+  margin-top: 1.5em;
+
+  text-align: left;
+
+  color: $box-text-color;
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-top-color: $box-text-color;
+  @media screen and (max-width: $mob-break) {
+    position: static;
+
+    margin-top: 1em;
+
+    @include column(1/1);
+  }
+}
+
+.objednavka_kad_leva {
+  right: $box-padding;
+  bottom: $box-padding;
+  // position: absolute;
+
+  display: block;
+  float: right;
+
+  width: 60%;
+  margin-top: 1.5em;
+  margin-right: 2em;
+
+  text-align: right;
+
+  color: $box-text-color;
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-top-color: $box-text-color;
+  @media screen and (max-width: $mob-break) {
+    position: static;
+
+    width: 100%;
+    margin-top: 1em;
+
+    @include column(1/1);
+  }
+}
+
+// DLAZDICE ///////
+.dlazdice-blok {
+  display: block;
+  clear: both;
+  @media screen and (max-width: $mob-break) {
+    /* @include column(1/1);*/
+    /*margin: 0.5em;*/
+  }
+}
+
+.dlazdice {
+  position: relative;
+
+  clear: both;
+
+  height: $vyska-dlazdice;
+  margin-bottom: 1em;
+
+  border-width: 0.5px;
+  border-style: $border-style;
+  border-radius: $border-radius;
+  // background-image: url("img/SGKadernictvi.jpg");
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: center;
+  background-size: cover;
+
+  @include col(1/3,
+  $cycle: 3, $gutter: 1.5);
+  @media screen and (max-width: 680px) {
+    @include column(1/1, $gutter: 0);
+    /*width: 100%;*/
+    /*margin: 0px;*/
+    /*visibility: hidden;*/
+    /*position: static;*/
+  }
+}
+
+.dlazdice-text {
+  position: absolute;
+  bottom: 0.7em;
+  left: 0;
+
+  width: 100%;
+  padding: 3px;
+
+  background-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+  h3 {
+    margin: 0;
+    padding: 0.5em;
+
+    text-transform: uppercase;
+
+    color: black;
+
+    font-size: 1.5em;
+  }
+  @media screen and (max-width: $mob-break) {
+    /*@include column(1/1);*/
+    /*margin: 0px;*/
+  }
+}
+
+// NAZEV WEBU A LOGO
+.hlavicka-text {
+  display: inline;
+  float: left;
+
+  margin: 5em -20px $box-margin $box-margin;
+}
+
+.nazev_webu {
+  text-transform: uppercase;
+
+  font-family: $font-family-header;
+  font-size: $nazev_webu_size;
+}
+
+.podnazev_webu {
+  display: block;
+  clear: both;
+  // display: inline;
+
+  margin-top: -0.5em;
+
+  font-family: $font-family-header;
+  font-size: $podnazev_webu_size;
+}
+
+// Logo
+.logo {
+  //  @include col(1/4, $offset: 3/4);
+  display: inline;
+  float: left;
+
+  margin-left: 0;
+  @media screen and (max-width: $mob-break) {
+    @include column(1/1);
+  }
+}
+
+.logo-img {
+  margin: 2em;
+}
+
+// KONEC FOTOGRAFII //
+// MENU NAVIGACE
+.search-boxik {
+  position: absolute;
+  right: 0;
+
+  margin-top: $search-top-padding;
+  /*        border-top-style: solid;
+        border-top-color: $telefon-color;
+        border-top-width: 0.5px;*/
+  padding: $box-padding;
+
+  border-radius: $border-radius;
+  background-color: $tmavsi-pozadi;
+  @media screen and (max-width: $mob-break) {
+    /*@include column(1/1);*/
+    position: static;
+
+    margin: 0 auto;
+
+    background-color: transparent;
+  }
+}
+
+.search-input {
+  color: $text-content-color;
+  background-color: $box-color;
+}
+
+.search-submit {
+  border: none;
+  background-color: $tmavsi-pozadi;
+}
+
+.menu {
+  padding: 2em;
+
+  list-style-type: none;
+
+  text-decoration: none;
+
+  color: yellow;
+  a {
+    text-transform: uppercase;
+
+    font-family: $font-family-header;
+    font-size: 1.5em;
+  }
+  .menu-item {
+    margin-bottom: 1em;
+  }
+  @media screen and (max-width: $mob-break) {
+    display: none;
+  }
+}
+
+.sub-menu {
+  padding-left: 1em;
+
+  list-style-type: none;
+
+  text-decoration: none;
+
+  color: yellow;
+  a {
+    text-transform: none;
+
+    font-family: $font-family-base;
+    font-size: 1em;
+  }
+  .menu-item {
+    margin-bottom: 0.5em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    padding-left: 1em;
+
+    border-top-width: 0.3px;
+    border-top-style: solid;
+    border-top-color: $telefon-color;
+    /*border-top-left-radius: $border-radius;*/
+    background-color: $tmavsi-pozadi;
+  }
+}
+
+
+/*HEADROOM*/
+
+.headroom {
+  transition: transform $rychlost-hlavicky linear;
+}
+
+.headroom--pinned {
+  transform: translateY(0%);
+}
+
+.headroom--unpinned {
+  transform: translateY(-100%);
+}
+
+
+/*---------------TABULKY----------------------*/
+
+.tablepress {
+  clear: both;
+
+  max-width: 80%;
+  margin: 2em auto 0;
+
+  border-width: 1px;
+  border-style: solid;
+  border-color: $border-color;
+  border-radius: $border-radius !important;
+  box-shadow: $box-shadow;
+  tbody {
+    td {
+      padding-right: 2em;
+      padding-left: 2em;
+
+      text-align: left;
+      vertical-align: middle;
     }
+  }
+  td {
+    padding: 0.5em !important;
+  }
+  h1 {
+    color: $text-color;
+  }
+  .row-1 {
+    color: white;
+    background-color: $body-bg;
+  }
+  .column-2 {
+    width: 20%;
+
+    text-align: right;
+    vertical-align: middle;
+
+    color: $text-content-color;
+    background-color: $box-color;
+
+    font-size: 1.2em;
+  }
+  @media screen and (max-width: $mob-break) {
+    max-width: 100%;
+  }
+}
+
+
+/*----------------------- ČLÁNKY IN ----------------------------*/
+
+.img-in {
+  margin-top: 2em;
+  margin-bottom: 2em;
+
+  border-style: solid;
+  border-color: $tmavsi-pozadi;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  @media screen and (max-width: $mob-break) {
+    display: block;
+
+    width: 100%;
+    height: auto;
+    padding: 0.5em;
+  }
+}
+
+.rohy {
+  display: inline-block;
+
+  margin-top: 2em;
+  margin-bottom: 2em;
+
+  border-style: solid;
+  border-color: $tmavsi-pozadi;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  @media screen and (max-width: $mob-break) {
+    display: block;
+
+    width: 100%;
+    height: auto;
+    padding: 0.5em;
+  }
+}
+
+.zarazka {
+  display: block;
+  clear: both;
+
+  width: 1.5em;
+}
+
+.breadcrumbs {
+  display: block;
+  clear: both;
+
+  margin-top: 1.5em;
+  margin-bottom: 1em;
+  padding: 0.5em 0.5em 0.5em 30%;
+
+  background-color: $tmavsi-pozadi;
+  @media screen and (max-width: $mob-break) {
+    float: none;
+
+    padding-left: 1em;
+  }
+}
+

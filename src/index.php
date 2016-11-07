@@ -1,9 +1,11 @@
 <?php get_header(); ?>
 
+
+
 	<main role="main">
 		<!-- section -->
 		<section class="platno">
-		
+
 
 			<h1><?php _e( 'Nejnovější příspěvky', 'html5blank' ); ?></h1>
 

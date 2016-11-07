@@ -6,7 +6,7 @@
 	<!-- section -->
 
 
-	
+
 	<section class="platno">
 
 		<h1>
@@ -43,31 +43,33 @@
 		</article>
 		<!-- /article -->
 
-		<?php endif; ?>
+	<?php endif; ?>
 
 		<!-- +++++++++++++++++++++++++++++++++++++ DESIGN +++++++++++++++++++++++++++++++++++++++++++++++++ -->
 
 		<div class="fotky_kadernictvi_blok">
 
 			<div class="osobni_foto_leve">
-				<?php 
+				<?php
 
 $image1 = get_field('osobni_fotografie_1');
+$telefon1 = get_field('telefon_kadernice_1');
+$telefon2 = get_field('telefon_kadernice_2');
 
 if( !empty($image1) ): ?>
 
 				<img src="<?php echo $image1['url']; ?>" alt="<?php echo $image1['alt']; ?>" />
 				<?php the_field('osobni_fotografie_1-popis'); ?>
-
-
+<?php endif; ?>
+<?php
+if( !empty($telefon1) ): ?>
 				<div class="objednavka_kad_leva">Objednávky na tel. čísle: <span class="telefon_c"><?php the_field('telefon_kadernice_1'); ?></span></div>
-
-				<?php endif; ?>
+<?php endif; ?>
 			</div>
 
 			<div class="osobni_foto_prave">
 
-				<?php 
+				<?php
 
 $image2 = get_field('osobni_fotografie_2');
 
@@ -77,12 +79,13 @@ if( !empty($image2) ): ?>
 				<p>
 					<?php the_field('osobni_fotografie_2-popis'); ?>
 				</p>
-
-
+<?php endif; ?>
+<?php
+if( !empty($telefon2) ): ?>
 				<div class="objednavka_kad_prava">Objednávky na tel. čísle: <span class="telefon_c"><?php the_field('telefon_kadernice_2'); ?></span></div>
+<?php endif; ?>
 
 
-				<?php endif; ?>
 			</div>
 		</div>
 
